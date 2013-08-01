@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @cheer_up.user_id %>
+</p>
+
+<p>
+  <b>Image upload:</b>
+  <%= @cheer_up.image_upload %>
+</p>
+
+<p>
+  <b>Sound upload:</b>
+  <%= @cheer_up.sound_upload %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @cheer_up.rating %>
+</p>
+
+<p>
+  <b>Votes:</b>
+  <%= @cheer_up.votes %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @cheer_up.content %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @cheer_up.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @cheer_up.latitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_cheer_up_path(@cheer_up) %> |
+<%= link_to 'Back', cheer_ups_path %>

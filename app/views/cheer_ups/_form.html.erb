@@ -1,0 +1,49 @@
+<%= form_for(@cheer_up) do |f| %>
+  <% if @cheer_up.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cheer_up.errors.count, "error") %> prohibited this cheer_up from being saved:</h2>
+
+      <ul>
+      <% @cheer_up.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :image_upload %><br />
+    <%= f.text_field :image_upload %>
+  </div>
+  <div class="field">
+    <%= f.label :sound_upload %><br />
+    <%= f.text_field :sound_upload %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :votes %><br />
+    <%= f.number_field :votes %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

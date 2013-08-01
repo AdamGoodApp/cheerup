@@ -1,0 +1,2 @@
+module CheerUpsHelper
+end

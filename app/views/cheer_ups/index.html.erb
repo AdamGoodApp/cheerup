@@ -1,0 +1,37 @@
+<h1>Listing cheer_ups</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Image upload</th>
+    <th>Sound upload</th>
+    <th>Rating</th>
+    <th>Votes</th>
+    <th>Content</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cheer_ups.each do |cheer_up| %>
+  <tr>
+    <td><%= cheer_up.user.firstname %></td>
+    <td><%= cheer_up.image_upload %></td>
+    <td><%= cheer_up.sound_upload %></td>
+    <td><%= cheer_up.rating %></td>
+    <td><%= cheer_up.votes %></td>
+    <td><%= cheer_up.content %></td>
+    <td><%= cheer_up.longitude %></td>
+    <td><%= cheer_up.latitude %></td>
+    <td><%= link_to 'Show', cheer_up %></td>
+    <td><%= link_to 'Edit', edit_cheer_up_path(cheer_up) %></td>
+    <td><%= link_to 'Destroy', cheer_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cheer up', new_cheer_up_path %>
