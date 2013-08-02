@@ -2,11 +2,10 @@
 
 <table>
   <tr>
-    <th>Email</th>
     <th>Firstname</th>
     <th>Lastname</th>
-    <th>Image upload</th>
-    <th>Bio</th>
+    <th>Portrait</th>
+    <th>About Me</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,10 +13,9 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.email %></td>
     <td><%= user.firstname %></td>
     <td><%= user.lastname %></td>
-    <td><%= image_tag user.image_upload.detail.url unless user.image_upload.detail.url.nil? %></td>
+    <td><%= image_tag user.image_upload.thumb.url unless user.image_upload.thumb.url.nil? %></td>
     <td><%= user.bio %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
