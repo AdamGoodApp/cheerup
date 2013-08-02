@@ -644,3 +644,20 @@ Processing by UsersController#index as HTML
   Rendered users/index.html.erb within layouts/application (2.7ms)
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
 Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2013-08-02 14:35:46 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (25.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (21.4ms)
+  [1m[35mUser Load (20.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 200 OK in 767ms (Views: 251.5ms | ActiveRecord: 430.5ms)
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-02 14:35:52 +0100
+Processing by CheerUpsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCheerUp Load (44.3ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" 
+  Rendered cheer_ups/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 144ms (Views: 7.8ms | ActiveRecord: 72.3ms)
