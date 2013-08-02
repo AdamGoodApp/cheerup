@@ -1,0 +1,83 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (12.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCheerUps (20130801165212)
+Migrating to CreateUsers (20130801165231)
+Migrating to RemoveEmailFromUsers (20130801180048)
+Migrating to AddDeviseToUsers (20130801180050)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-02 15:27:24 +0100
+Processing by CheerUpsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCheerUp Load (0.4ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" 
+  Rendered cheer_ups/index.html.erb within layouts/application (6.2ms)
+Compiled application.js  (8ms)  (pid 42946)
+Completed 200 OK in 234ms (Views: 67.5ms | ActiveRecord: 10.3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (31.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (30.6ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'arthur@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'arthur@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (56.7ms)[0m  [1mINSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["content", "Wine is constant proof that God loves us and loves to see us happy."], ["created_at", Fri, 02 Aug 2013 15:29:21 UTC +00:00], ["image_upload", nil], ["latitude", "51.502278"], ["longitude", "-0.111237"], ["rating", 7], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:21 UTC +00:00], ["user_id", nil], ["votes", 9]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "The purpose of our lives is to be happy."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.50708"], ["longitude", "-0.163765"], ["rating", 3], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", nil], ["votes", 9]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["content", "A table, a chair, a bowl of fruit and a violin; what else does a man need to be happy?"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.501269"], ["longitude", "-0.141964"], ["rating", 20], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", nil], ["votes", 20]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'sadie@gmail.com' LIMIT 1
+  [1m[36mSQL (25.9ms)[0m  [1mINSERT INTO "users" ("bio", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "image_upload", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["bio", "Squid occupy cupidatat assumenda accusamus, food truck 8-bit thundercats ea. Ad vinyl PBR, Vice nostrud Pinterest delectus chillwave swag labore ea. Echo Park veniam organic shoreditch, sint dolore lo-fi id Williamsburg thundercats Truffaut adipisicing nesciunt. Ad aesthetic vero tote bag, disrupt mixtape butcher retro aliquip nihil asymmetrical polaroid proident occaecat intelligentsia. Readymade church-key american apparel craft beer, Odd Future VHS incididunt blog shabby chic hoodie. Cray whatever deserunt Banksy laboris, artisan dolor post-ironic fingerstache mixtape fixie chambray mumblecore veniam. Duis meggings ex, twee gluten-free biodiesel seitan chillwave bicycle rights narwhal cray."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "sadie@gmail.com"], ["encrypted_password", "$2a$10$sYAT2f5mDnaN21IAFSGpjeM5gEGqXd2eC5qolgpbTLNAA2nZ92cBu"], ["firstname", "Sadie"], ["image_upload", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", "Saunders"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "Most folks are as happy as they make up their minds to be."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.50034"], ["longitude", "-0.162349"], ["rating", 4], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 4], ["votes", 6]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["content", "It's Gin O'Clock!!!!"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.500607"], ["longitude", "-0.173593"], ["rating", 9], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 4], ["votes", 12]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "I don't know the problem but alcohol is the answer"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.497374"], ["longitude", "-0.170288"], ["rating", 20], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 4], ["votes", 24]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'damitramit@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("bio", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "image_upload", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"  [["bio", "Tousled fugiat nulla, yr excepteur before they sold out shabby chic Tonx selfies jean shorts synth sed semiotics duis cliche. Cardigan thundercats kitsch sustainable, YOLO Etsy pug wolf asymmetrical chambray banjo qui. Shabby chic magna american apparel, Tonx irony leggings chillwave. Typewriter artisan excepteur, you probably havent heard of them irony aute fugiat. Brooklyn qui consectetur, aesthetic bicycle rights adipisicing ethnic laborum master cleanse lomo velit plaid selfies organic whatever. Consectetur McSweeneys magna, pug direct trade lo-fi accusamus tousled chillwave master cleanse. Truffaut street art typewriter stumptown duis tempor."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "damitramit@gmail.com"], ["encrypted_password", "$2a$10$4zKSqmXBU1nEsDACBsIBi.4DMTeiEquatqOUzYZgnLkVmM8Hpnh2u"], ["firstname", "Ramit"], ["image_upload", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", "Baldeep"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["content", "Do not take life too seriously. You will never get out of it alive."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.500607"], ["longitude", "-0.173593"], ["rating", 5], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 5], ["votes", 7]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "Don't worry, be happy"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.497374"], ["longitude", "-0.170288"], ["rating", 6], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 5], ["votes", 10]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["content", "Puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys!!!"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.497463"], ["longitude", "-0.018711"], ["rating", -2], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 5], ["votes", 2]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("bio", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "firstname", "image_upload", "last_sign_in_at", "last_sign_in_ip", "lastname", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["bio", "Thundercats banjo laborum, High Life asymmetrical ethical aesthetic excepteur gastropub twee Bushwick. Laboris artisan ut, dolor craft beer swag esse. PBR aliquip vegan proident. Ugh selfies four loko +1 Vice, narwhal synth veniam salvia non helvetica. Tousled pitchfork master cleanse, wolf deserunt nostrud church-key lo-fi Carles Terry Richardson pop-up non thundercats selvage squid. Roof party YOLO pork belly cray pug. Tattooed Carles vegan dolore, locavore pitchfork selvage fap sriracha DIY."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "test@gmail.com"], ["encrypted_password", "$2a$10$4wdaK.DGpCDYi2QflTwf.eZGgIRZIu8jDVVZLkxZpYCH2gWFuVPga"], ["firstname", "Test"], ["image_upload", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["lastname", "Test"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "Don't think of kittens!."], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.506913"], ["longitude", "-0.183334"], ["rating", -3], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 6], ["votes", 5]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["content", "Be Happy :D"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.516101"], ["longitude", "-0.098877"], ["rating", 3], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 6], ["votes", 5]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "Jesus Loves you. (That's his job)"], ["created_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["image_upload", nil], ["latitude", "51.515673"], ["longitude", "-0.131493"], ["rating", 9], ["sound_upload", nil], ["updated_at", Fri, 02 Aug 2013 15:29:22 UTC +00:00], ["user_id", 6], ["votes", 11]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
