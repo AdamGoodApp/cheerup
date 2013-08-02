@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  require 'carrierwave/processing/rmagick'
+  mount_uploader :image_upload, AvatarUploader
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

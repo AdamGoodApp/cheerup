@@ -17,6 +17,7 @@
 
 <p>
   <b>Image upload:</b>
+  <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
   <%= @user.image_upload %>
 </p>
 
