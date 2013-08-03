@@ -43,6 +43,7 @@ class CheerUpsController < ApplicationController
   # POST /cheer_ups
   # POST /cheer_ups.json
   def create
+    params[:cheer_up][:user_id] = current_user.id
     @cheer_up = CheerUp.new(params[:cheer_up])
 
     respond_to do |format|
