@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :on => :create
-  validates :firstname, presence: true
-  validates :lastname, presence: true
+  validates :firstname, presence: true, :on => :update
+  validates :lastname, presence: true, :on => :update
   validates :bio, presence: true, :on => :update
   validates :image_upload, presence: true, :on => :update
 
