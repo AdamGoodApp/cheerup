@@ -4,6 +4,7 @@ class CheerUpsController < ApplicationController
 
   before_filter :authenticate_user!
 
+
   def index
     @cheer_ups = CheerUp.all
 
