@@ -16,25 +16,17 @@
             <li><%= link_to('Home', users_path) %></li>
             <li><%= link_to('CheerUps', cheer_ups_path)%></li>
           </ul>
+          <div class="pull-right">
+            <% if current_user %>
+              <%= current_user.email %>
+              <%= link_to "log out", destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "log in", new_user_session_path %>
+            <% end %>
     </div>
       </div>      
 
-
-
-
-    <% if current_user %>
-      <%= current_user.email %>
-      <%= link_to "log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "log in", new_user_session_path %>
-      <%= link_to "register", new_user_registration_path %>
-    <% end %>
-  </div>
-
-  <div class='devise_alerts'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </div>
+  
   <%= yield %>
 
 </body>
