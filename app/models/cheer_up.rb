@@ -10,6 +10,7 @@ class CheerUp < ActiveRecord::Base
   scope :blurb, -> { select("content, image_upload, rating, sound_upload, user_id, votes") }
 
   scope :with_user, -> { includes(:user)}
+  scope :with_votes, -> { includes(:votes)}
 
   def vote_up
     @cheer_up.liked_by current_user
