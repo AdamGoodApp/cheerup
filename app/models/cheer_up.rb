@@ -1,5 +1,5 @@
 class CheerUp < ActiveRecord::Base
-  attr_accessible :content, :image_upload, :latitude, :longitude, :rating, :sound_upload, :user_id, :votes
+  attr_accessible :content, :image_upload, :latitude, :longitude, :rating, :sound_upload, :user_id
 
   acts_as_votable
 
@@ -12,16 +12,15 @@ class CheerUp < ActiveRecord::Base
   scope :with_user, -> { includes(:user)}
 
   def vote_up
-    @cheer_up.rating += 1
-    @cheer_up.votes += 1
-    @cheer_up.save
+    @cheer_up.liked_by current_user
   end
 
   def vote_down
-    @cheer_up.rating -= 1
-    @cheer_up.votes += 1
-    @cheer_up.save
+    @cheer_up.downvote_from current_user
   end
 
+  def rating
+    upvotes.size - downvotes.size
+  end
 
 end
