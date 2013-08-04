@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :cheer_ups
 
+  acts_as_voter
+
   scope :blurb, -> { select("users.id, users.firstname, users.image_upload") }
 
   scope :with_cu, -> { includes(:cheer_ups)}

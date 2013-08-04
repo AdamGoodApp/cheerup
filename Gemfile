@@ -19,6 +19,7 @@ gem 'validates_email_format_of'
 gem 'seed_dump'
 gem 'localtunnel'
 gem 'proxylocal'
+gem 'acts_as_votable'
 
 group :development, :test do
   gem 'pry-rails'
