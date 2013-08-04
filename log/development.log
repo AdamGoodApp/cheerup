@@ -3785,3 +3785,56 @@ Processing by CheerUpsController#index as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
   Rendered cheer_ups/index.html.erb within layouts/application (43.7ms)
 Completed 200 OK in 51ms (Views: 47.8ms | ActiveRecord: 0.8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-03 20:51:46 +0100
+Processing by CheerUpsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCheerUp Load (0.8ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered cheer_ups/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 296ms (Views: 145.0ms | ActiveRecord: 49.4ms)
+
+
+Started GET "/cheer_ups/new" for 127.0.0.1 at 2013-08-03 20:51:54 +0100
+Processing by CheerUpsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  Rendered cheer_ups/_form.html.erb (49.0ms)
+  Rendered cheer_ups/new.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 63ms (Views: 61.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cheer_ups" for 127.0.0.1 at 2013-08-03 20:52:42 +0100
+Processing by CheerUpsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ELOd4lsycZ7JUvCbj6kaobwYFoUHtCBij5oAOtYM77A=", "cheer_up"=>{"user_id"=>"4", "image_upload"=>#<ActionDispatch::Http::UploadedFile:0x007fdf6a8dfdf0 @original_filename="images.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"cheer_up[image_upload]\"; filename=\"images.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/zl/hqzvxrnj30v8806l891lnf4w0000gn/T/RackMultipart20130803-40028-1e1y2ts>>, "sound_upload"=>#<ActionDispatch::Http::UploadedFile:0x007fdf6a8dfd50 @original_filename="images (2).jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"cheer_up[sound_upload]\"; filename=\"images (2).jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/zl/hqzvxrnj30v8806l891lnf4w0000gn/T/RackMultipart20130803-40028-1xmbvo1>>, "rating"=>"0", "votes"=>"", "content"=>"this is test with sound file", "longitude"=>"", "latitude"=>""}, "commit"=>"Create Cheer up"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "cheer_ups" ("content", "created_at", "image_upload", "latitude", "longitude", "rating", "sound_upload", "updated_at", "user_id", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["content", "this is test with sound file"], ["created_at", Sat, 03 Aug 2013 19:52:42 UTC +00:00], ["image_upload", "images.jpeg"], ["latitude", ""], ["longitude", ""], ["rating", 0], ["sound_upload", "images__2_.jpeg"], ["updated_at", Sat, 03 Aug 2013 19:52:42 UTC +00:00], ["user_id", 4], ["votes", nil]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cheer_ups/4
+Completed 302 Found in 69ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/cheer_ups/4" for 127.0.0.1 at 2013-08-03 20:52:42 +0100
+Processing by CheerUpsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCheerUp Load (0.5ms)[0m  [1mSELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  Rendered cheer_ups/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-03 20:52:57 +0100
+Processing by CheerUpsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCheerUp Load (0.2ms)[0m  [1mSELECT "cheer_ups".* FROM "cheer_ups" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered cheer_ups/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.6ms)
