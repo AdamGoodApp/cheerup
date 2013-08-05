@@ -23,7 +23,7 @@
      <td><%= cheer_up.content %></td>
     <td><%= cheer_up.sound_upload %></td>
     <td><%= cheer_up.rating %></td>
-    <td><%= cheer_up.votes %></td>
+    <td><%= cheer_up.votes.size %></td>
     <td><%= link_to 'Show', cheer_up %></td>
     <td><%= link_to 'Edit', edit_cheer_up_path(cheer_up) %></td>
     <td><%= link_to 'Destroy', cheer_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>

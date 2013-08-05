@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :cheer_ups
 
+  acts_as_voter
+
   scope :blurb, -> { select("users.id, users.firstname, users.image_upload") }
 
   scope :with_cu, -> { includes(:cheer_ups)}
@@ -24,10 +26,10 @@ class User < ActiveRecord::Base
 
   def stats
     number_of_CU = cheer_ups.count
-    sum_CU_ratings = cheer_ups.map { |cu|
-      cu['rating'] }.reduce(0, :+)
-    number_of_CU_votes = cheer_ups.map { |cu|
-      cu['votes'] }.reduce(0, :+)
+    sum_CU_ratings = cheer_ups.inject(0) { |sum, cu|
+      sum + cu.rating }
+    number_of_CU_votes = cheer_ups.inject(0) { |sum, cu|
+      sum + cu.votes.size }
     average_CU_rating = sum_CU_ratings / number_of_CU
 
     stats = {number_of_CU: number_of_CU, average_CU_rating: average_CU_rating, number_of_CU_votes: number_of_CU_votes }

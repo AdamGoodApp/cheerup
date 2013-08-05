@@ -46,7 +46,7 @@ class CheerUpsController < ApplicationController
   def create
     params[:cheer_up][:user_id] = current_user.id
     @cheer_up = CheerUp.new(params[:cheer_up])
-
+    
     respond_to do |format|
       if @cheer_up.save
         format.html { redirect_to @cheer_up, notice: 'Cheer up was successfully created.' }
