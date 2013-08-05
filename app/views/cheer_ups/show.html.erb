@@ -11,6 +11,17 @@
   <%= @cheer_up.sound_upload %>
 </p>
 
+<audio controls>
+    <source src="<%= @cheer_up.sound_upload %>" type="audio/ogg">
+    <source src="<%= @cheer_up.sound_upload %>" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <% if current_user%>
+    <a href="<%= @cheer_up.sound_upload %>">Download audio </a>
+    <% else %>
+    Please pay
+    <% end %>
+
 <p>
   <b>Rating:</b>
   <%= @cheer_up.rating %>
