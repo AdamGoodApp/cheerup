@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
   validates :firstname, presence: true, :on => :update
   validates :lastname, presence: true, :on => :update
   validates :bio, presence: true, :on => :update
-  validates :image_upload, presence: true, :on => :update
 
   def stats
     number_of_CU = cheer_ups.count
