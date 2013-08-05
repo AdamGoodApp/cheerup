@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+CheerUp.destroy_all
+
 u = User.create(firstname: 'Arthur', lastname: 'McLovin', bio: 'Readymade occaecat salvia chillwave meggings single-origin coffee. Irure dolor dolore locavore aute pitchfork, pug wolf. Organic quinoa tousled keffiyeh gentrify lomo, keytar cardigan id ad culpa voluptate 3 wolf moon quis sriracha. Odd Future YOLO exercitation non, Bushwick odio cardigan Echo Park Schlitz salvia labore keffiyeh Neutra gentrify bespoke. Authentic consequat try-hard excepteur narwhal. Ullamco craft beer freegan, pariatur intelligentsia Neutra seitan VHS authentic kale chips consectetur duis. Neutra beard Wes Anderson, lomo irure food truck mumblecore ea shabby chic biodiesel cliche.', password: 'password', password_confirmation: 'password', email: 'arthur@gmail.com')
 
 u.save
