@@ -1,10 +1,12 @@
 class CheerUp < ActiveRecord::Base
+
   require 'carrierwave/processing/rmagick'
   mount_uploader :image_upload, AvatarUploader
   mount_uploader :sound_upload, CheersoundUploader
 
+  attr_accessible :content, :image_upload, :latitude, :longitude, :rating, :sound_upload, :user_id
 
-  attr_accessible :content, :image_upload, :latitude, :longitude, :rating, :sound_upload, :user_id, :votes
+  acts_as_votable
 
   belongs_to :user
 
@@ -13,18 +15,18 @@ class CheerUp < ActiveRecord::Base
   scope :blurb, -> { select("content, image_upload, rating, sound_upload, user_id, votes") }
 
   scope :with_user, -> { includes(:user)}
+  scope :with_votes, -> { includes(:votes)}
 
   def vote_up
-    @cheer_up.rating += 1
-    @cheer_up.votes += 1
-    @cheer_up.save
+    @cheer_up.liked_by current_user
   end
 
   def vote_down
-    @cheer_up.rating -= 1
-    @cheer_up.votes += 1
-    @cheer_up.save
+    @cheer_up.downvote_from current_user
   end
 
+  def rating
+    upvotes.size - downvotes.size
+  end
 
 end
