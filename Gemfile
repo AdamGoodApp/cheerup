@@ -22,7 +22,6 @@ gem 'proxylocal'
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'pry-debugger'
   gem 'pry-stack_explorer'
   gem 'annotate'
   gem 'quiet_assets'

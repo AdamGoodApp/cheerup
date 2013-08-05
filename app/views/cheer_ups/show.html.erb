@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
-  <%= @cheer_up.user_id %>
-</p>
-
-<p>
   <b>Image upload:</b>
   <%= image_tag @cheer_up.image_upload.thumb.url unless @cheer_up.image_upload.thumb.url.nil? %>
   <%= @cheer_up.image_upload %>

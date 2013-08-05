@@ -1,8 +1,9 @@
-##rails specific ignore options
+## rails specific ignore options
 config/database.yml
 log/*
 tmp/*
-## generic files to ignore.
+
+## generic files to ignore
 *~
 *.lock
 *.DS_Store
