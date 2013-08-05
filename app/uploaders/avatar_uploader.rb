@@ -19,7 +19,7 @@ include CarrierWave::RMagick
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
     # For Rails 3.1+ asset pipeline compatibility:
-    ActionController::Base.helpers.asset_path("beagleavatar.jpg")
+    ActionController::Base.helpers.asset_path("beagleavatar_100px.jpg")
 
     # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
