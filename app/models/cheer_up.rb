@@ -8,7 +8,7 @@ class CheerUp < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :content, presence: true
+  validates :content, presence: true,length: { maximum: 141 }
 
   scope :blurb, -> { select("content, image_upload, rating, sound_upload, user_id, votes") }
 

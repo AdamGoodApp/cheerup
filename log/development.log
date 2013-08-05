@@ -1888,3 +1888,180 @@ Processing by Devise::SessionsController#new as HTML
   Rendered /Users/Adam/.rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/devise-3.0.0/app/views/devise/sessions/new.html.erb within layouts/application (4.1ms)
 Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
 >>>>>>> aba4849ec115551af7e63a7af9997062dec27909
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 13:49:49 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (18.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  [1m[35mEXPLAIN (0.7ms)[0m  EXPLAIN SELECT "users".* FROM "users" 
+EXPLAIN for: SELECT "users".* FROM "users" 
+                       QUERY PLAN
+--------------------------------------------------------
+ Seq Scan on users  (cost=0.00..1.01 rows=1 width=4216)
+(1 row)
+
+  Rendered users/index.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 1420ms (Views: 274.2ms | ActiveRecord: 1027.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 13:49:55 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-08-05 13:49:57 +0100
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-05 13:49:59 +0100
+Processing by CheerUpsController#index as HTML
+Completed 401 Unauthorized in 38ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-08-05 13:49:59 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/Adam/.rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/devise-3.0.0/app/views/devise/shared/_links.erb (2.5ms)
+  Rendered /Users/Adam/.rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/devise-3.0.0/app/views/devise/sessions/new.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 45ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 13:50:00 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-08-05 13:50:13 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/Adam/.rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/devise-3.0.0/app/views/devise/shared/_links.erb (0.6ms)
+  Rendered /Users/Adam/.rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/devise-3.0.0/app/views/devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-08-05 13:50:49 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhN1BUbwFfhozs0nrO5xR6x4qCwSxz+LXaXiEG5dgug=", "user"=>{"email"=>"raisadamo@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (85.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'raisadamo@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (20.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-08-03 16:29:47.971041', "current_sign_in_at" = '2013-08-05 12:50:50.023306', "sign_in_count" = 4, "updated_at" = '2013-08-05 12:50:50.063840' WHERE "users"."id" = 6
+  [1m[36m (14.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cheer_ups
+Completed 302 Found in 433ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-05 13:50:50 +0100
+Processing by CheerUpsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCheerUp Load (30.3ms)[0m  [1mSELECT "cheer_ups".* FROM "cheer_ups" [0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  Rendered cheer_ups/index.html.erb within layouts/application (125.9ms)
+Completed 200 OK in 233ms (Views: 150.2ms | ActiveRecord: 63.3ms)
+
+
+Started GET "/cheer_ups/15/edit" for 127.0.0.1 at 2013-08-05 13:50:58 +0100
+Processing by CheerUpsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCheerUp Load (36.5ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1  [["id", "15"]]
+  Rendered cheer_ups/_form.html.erb (8.4ms)
+  Rendered cheer_ups/edit.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 88ms (Views: 47.1ms | ActiveRecord: 37.3ms)
+
+
+Started PUT "/cheer_ups/15" for 127.0.0.1 at 2013-08-05 13:51:03 +0100
+Processing by CheerUpsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhN1BUbwFfhozs0nrO5xR6x4qCwSxz+LXaXiEG5dgug=", "cheer_up"=>{"rating"=>"", "votes"=>"", "content"=>"", "longitude"=>"", "latitude"=>""}, "commit"=>"Update Cheer up", "id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCheerUp Load (0.4ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1  [["id", "15"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.1ms)[0m  ROLLBACK
+  Rendered cheer_ups/_form.html.erb (6.4ms)
+  Rendered cheer_ups/edit.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 101ms (Views: 73.7ms | ActiveRecord: 16.1ms)
+
+
+Started PUT "/cheer_ups/15" for 127.0.0.1 at 2013-08-05 13:51:08 +0100
+Processing by CheerUpsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhN1BUbwFfhozs0nrO5xR6x4qCwSxz+LXaXiEG5dgug=", "cheer_up"=>{"rating"=>"", "votes"=>"", "content"=>"1", "longitude"=>"", "latitude"=>""}, "commit"=>"Update Cheer up", "id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCheerUp Load (0.3ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1  [["id", "15"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (36.4ms)[0m  UPDATE "cheer_ups" SET "content" = '1', "updated_at" = '2013-08-05 12:51:08.862077' WHERE "cheer_ups"."id" = 15
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cheer_ups/15
+Completed 302 Found in 49ms (ActiveRecord: 37.8ms)
+
+
+Started GET "/cheer_ups/15" for 127.0.0.1 at 2013-08-05 13:51:08 +0100
+Processing by CheerUpsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCheerUp Load (0.4ms)[0m  [1mSELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1[0m  [["id", "15"]]
+  Rendered cheer_ups/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cheer_ups" for 127.0.0.1 at 2013-08-05 13:54:24 +0100
+Processing by CheerUpsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36mCheerUp Load (0.3ms)[0m  [1mSELECT "cheer_ups".* FROM "cheer_ups" [0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  Rendered cheer_ups/index.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 138ms (Views: 49.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/cheer_ups/15/edit" for 127.0.0.1 at 2013-08-05 13:54:27 +0100
+Processing by CheerUpsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCheerUp Load (0.5ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1  [["id", "15"]]
+  Rendered cheer_ups/_form.html.erb (5.0ms)
+  Rendered cheer_ups/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/cheer_ups/15" for 127.0.0.1 at 2013-08-05 13:54:53 +0100
+Processing by CheerUpsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhN1BUbwFfhozs0nrO5xR6x4qCwSxz+LXaXiEG5dgug=", "cheer_up"=>{"rating"=>"", "votes"=>"", "content"=>"1234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234123423423423423444443423412342342342342344444342341234234234234234444434234", "longitude"=>"", "latitude"=>""}, "commit"=>"Update Cheer up", "id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCheerUp Load (0.4ms)[0m  SELECT "cheer_ups".* FROM "cheer_ups" WHERE "cheer_ups"."id" = $1 LIMIT 1  [["id", "15"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered cheer_ups/_form.html.erb (7.5ms)
+  Rendered cheer_ups/edit.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 32ms (Views: 17.2ms | ActiveRecord: 1.2ms)
