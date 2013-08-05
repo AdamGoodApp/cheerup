@@ -18,11 +18,20 @@
           </ul>
           <div class="pull-right">
             <% if current_user %>
-              <%= current_user.email %>
-              <%= link_to "log out", destroy_user_session_path, method: :delete %>
+              <%= image_tag current_user.image_upload.thumb.url %>
+              <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
             <% else %>
-              <%= link_to "log in", new_user_session_path %>
+            <%= form_for("user", :url => user_session_path) do |f| %>
+            <%= f.email_field :email, :placeholder => "Email", required: "required" %>
+            <%= f.password_field :password, :placeholder => "Password", required: "required" %>
+            <%= f.submit 'Sign in', class: 'btn btn-success' %>
+            <%= link_to "Forgot your password?", new_password_path('user') %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
             <% end %>
+            <% end %>
+
+
     </div>
       </div>
 
