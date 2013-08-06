@@ -83,4 +83,16 @@ class CheerUpsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    cheer_up = CheerUp.find(params[:id])
+    cheer_up.vote_up(current_user)
+    redirect_to request.referer
+  end
+
+  def downvote
+    cheer_up = CheerUp.find(params[:id])
+    cheer_up.vote_down(current_user)
+    redirect_to request.referer
+  end
 end

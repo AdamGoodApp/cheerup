@@ -7,6 +7,8 @@ Cheerups::Application.routes.draw do
 
   root to: "users#index"
   resources :cheer_ups
+  get 'cheer_ups/upvote/:id', to: 'cheer_ups#upvote', as: 'upvote'
+  get 'cheer_ups/downvote/:id', to: 'cheer_ups#downvote', as: 'downvote'
 
 
   # The priority is based upon order of creation:
