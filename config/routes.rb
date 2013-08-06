@@ -5,7 +5,7 @@ Cheerups::Application.routes.draw do
   get "/launch" => 'main_pages#launch'
   get "/home" => 'main_pages#home'
 
-  root to: "users#index"
+  root to: "main_pages#launch"
   resources :cheer_ups
   get 'cheer_ups/upvote/:id', to: 'cheer_ups#upvote', as: 'upvote'
   get 'cheer_ups/downvote/:id', to: 'cheer_ups#downvote', as: 'downvote'
