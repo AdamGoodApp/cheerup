@@ -1,3 +1,11 @@
+<style type="text/css">
+  #cu {
+    background: url('<%= asset_path(randomized_background_image) %>') no-repeat fixed;
+    background-size: 100% 100%;
+    width: 480px; 
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <div id="cu" class="container">
@@ -8,7 +16,9 @@
     
       <div class="span4 cu2">
         <div class="cuimage">
-          <%= image_tag @cheer_up.image_upload.thumb.url %>
+          <% if @cheer_up.image_upload.length > 0 %>
+          <%= image_tag @cheer_up.image_upload.detail.url %>
+          <% end %>
         </div>
         
         <div class="cusound">
