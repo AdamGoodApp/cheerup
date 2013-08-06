@@ -1,10 +1,6 @@
 <% cheer_ups.each do |cheer_up| %>
-<div id="cu" class="container cheer_up row">
-<!--     <div class="span2 profileimage">
-      <%= image_tag cheer_up.user.image_upload.thumb.url %>
-    </div>
- -->
-      <div class="span4 cu2">
+<div class="container cheer_up">
+      <div class="cu2">
         <div class="cuimage">
           <% if cheer_up.image_upload.length > 0 %>
           <%= image_tag cheer_up.image_upload.detail.url %>
@@ -28,10 +24,11 @@
           <%= cheer_up.rating %>
         </div>
 
-        <%= link_to 'Edit', edit_cheer_up_path(cheer_up), class: "btn" %> |
-        <%= link_to 'Back', cheer_ups_path, class: "btn" %>
+        <%= link_to 'Edit', edit_cheer_up_path(cheer_up), class: "btn" if cheer_up.user_id == current_user.id %>
+        <% unless cheer_up.user_id == current_user.id then %>
         <%= link_to 'up vote', upvote_path(cheer_up.id), class: 'btn' %>
         <%= link_to 'down vote', downvote_path(cheer_up.id), class: 'btn' %>
+        <% end %>
   </div>
 
 </div>
