@@ -15,7 +15,7 @@ class Ability
         cheer_up.user_id = user.id
       end
       can :read, CheerUp do |cheer_up|
-        cheer_up.active? || cheer_up.user_id = user.id
+        #cheer_up.active? || cheer_up.user_id = user.id
       end
     end
   end
