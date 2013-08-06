@@ -2,7 +2,14 @@
 
 $(document).ready(init);
 
+
 function init() {
+    $('#cu_feed').isotope({
+  masonry: {
+    columnWidth: 240
+  }
+});
+
     var things = $('#cu_feed');
     filters = {};
 
@@ -48,4 +55,7 @@ function init() {
         things.isotope({ filter: selector });
     }
   );
+
+
+
 }

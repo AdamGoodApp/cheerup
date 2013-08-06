@@ -13,7 +13,6 @@ body {
   border-radius: 10px;
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
   background: #e67e22;
-  max-width: 480px;
 }
 
 .cuimage {
@@ -28,6 +27,7 @@ body {
 
 .isotope-item {
   z-index: 2;
+  max-width: 380px;
 }
 
 .isotope-hidden.isotope-item {

@@ -2,7 +2,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<div id='homepage' class='container'>
+<div >
 
   <div id='left_sidebar'>
     <div id='mini_profile'>
@@ -12,10 +12,16 @@
   </div> <!-- End .left_sidebar -->
 
   <div id='cu_feed_container' class='container'>
+  <h2>Filter CheerUps</h2>
+  <ul class="filter option-set" data-filter-group="category">
+    <a href="#" data-filter-value=""><li>all</li></a>
+    <a href="#" data-filter-value=".full"><li>full</li></a>
+    <a href="#" data-filter-value=".empty"><li>empty</li></a>
+  </ul>
     <div id='cu_nav_bar'>
     </div>
     <div id='cu_feed'>
-        <%= render partial: 'single_cu', locals: {cheer_ups: @cheer_ups}  %>
+        <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
     </div>
 
   </div><!-- End .cu_feed_container -->
