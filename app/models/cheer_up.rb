@@ -12,7 +12,7 @@ class CheerUp < ActiveRecord::Base
 
   validates :content, presence: true,length: { maximum: 141 }
 
-  scope :blurb, -> { select("content, image_upload, rating, sound_upload, user_id, votes") }
+  scope :blurb, -> { select("id, content, image_upload, rating, sound_upload, user_id") }
 
   scope :with_user, -> { includes(:user)}
   scope :with_votes, -> { includes(:votes)}

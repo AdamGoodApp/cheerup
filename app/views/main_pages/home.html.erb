@@ -1,0 +1,19 @@
+<h1>Home Page</h1>
+<div id='homepage' class='container'>
+
+  <div id='left_sidebar'>
+    <div id='mini_profile'>
+    </div>
+    <div id='friend_list'>
+    </div>
+  </div> <!-- End .left_sidebar -->
+
+  <div id='cu_feed_container' class='container'>
+    <div id='cu_nav_bar'>
+    </div>
+    <div id='cu_feed'>
+        <%= render partial: 'cheer_ups/single_cu', locals: {cheer_ups: @cheer_ups}  %>
+    </div>
+
+  </div><!-- End .cu_feed_container -->
+</div>

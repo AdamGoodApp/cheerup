@@ -12,31 +12,31 @@
     <div class="navbar navbar-inverse">
       <div class="navbar-inner">
         <a class="brand" href="/">Cheer Up!</a>
-          <ul class="nav">
-            <li><%= link_to('Home', users_path) %></li>
-            <li><%= link_to('CheerUps', cheer_ups_path)%></li>
-          </ul>
-          <div class="pull-right">
-            <% if current_user %>
-              <%= image_tag current_user.image_upload.thumb.url %>
-              <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
-            <% else %>
-            <%= form_for("user", :url => user_session_path) do |f| %>
-            <%= f.email_field :email, :placeholder => "Email", required: "required" %>
-            <%= f.password_field :password, :placeholder => "Password", required: "required" %>
-            <%= f.submit 'Sign in', class: 'btn btn-success' %>
-            <%= link_to "Forgot your password?", new_password_path('user') %>
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-            <% end %>
-            <% end %>
+        <ul class="nav">
+          <li><%= link_to('Home', users_path) %></li>
+          <li><%= link_to('CheerUps', cheer_ups_path)%></li>
+        </ul>
+        <div class="pull-right">
+          <% if current_user %>
+            <%= image_tag current_user.image_upload.thumb.url %>
+            <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+          <%= form_for("user", :url => user_session_path) do |f| %>
+          <%= f.email_field :email, :placeholder => "Email", required: "required" %>
+          <%= f.password_field :password, :placeholder => "Password", required: "required" %>
+          <%= f.submit 'Sign in', class: 'btn btn-success' %>
+          <%= link_to "Forgot your password?", new_password_path('user') %>
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+          <% end %>
+          <% end %>
 
 
-    </div>
+        </div>
       </div>
 
 
-  <%= yield %>
+      <%= yield %>
 
-</body>
-</html>
+    </body>
+    </html>
