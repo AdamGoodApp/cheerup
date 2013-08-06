@@ -20,7 +20,7 @@ c = CheerUp.create(
   longitude: '-0.111237'
   )
 c = CheerUp.create(
-  user_id: u.id,
+  user_id: u.id
   content: 'The purpose of our lives is to be happy.',
   latitude: '51.50708',
   longitude: '-0.163765'

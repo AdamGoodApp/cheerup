@@ -2,12 +2,10 @@ class CheerUpsController < ApplicationController
   # GET /cheer_ups
   # GET /cheer_ups.json
 
-  before_filter :authenticate_user!
-
+  load_and_authorize_resource
 
   def index
     @cheer_ups = CheerUp.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cheer_ups }

@@ -32,11 +32,15 @@
           <% end %>
 
 
-        </div>
-      </div>
+    </div>
+    </div>
 
-
-      <%= yield %>
+<% flash.each do |name, message| %>
+  <div class='flash-message flash-message-<%=name%>'>
+    <%= message %>
+  </div>
+<% end %>
+  <%= yield %>
 
     </body>
     </html>

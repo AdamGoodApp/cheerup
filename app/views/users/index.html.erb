@@ -18,8 +18,8 @@
     <td><%= image_tag user.image_upload.thumb.url unless user.image_upload.thumb.url.nil? %></td>
     <td><%= user.bio %></td>
     <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
+    <td><%= link_to "Cancel my account", registration_path(user), :confirm => "Are you sure?" , :method => :delete %></td>
   </tr>
 <% end %>
 </table>

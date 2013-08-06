@@ -1,9 +1,10 @@
 Cheerups::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => "sessions"}
 
-  resources :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show]
   get "/launch" => 'main_pages#launch'
   get "/home" => 'main_pages#home'
+
   root to: "users#index"
   resources :cheer_ups
 

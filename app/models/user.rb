@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  attr_accessible :bio, :email, :firstname, :image_upload, :remove_image_upload, :lastname, :password, :password_confirmation, :remember_me
+  attr_accessible :bio, :email, :firstname, :image_upload, :remove_image_upload, :lastname, :password, :password_confirmation, :remember_me, :role
 
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :on => :create
@@ -33,5 +33,10 @@ class User < ActiveRecord::Base
 
     stats = {number_of_CU: number_of_CU, average_CU_rating: average_CU_rating, number_of_CU_votes: number_of_CU_votes }
   end
+
+  def role?(role)
+    self.role == role
+  end
+
 
 end
