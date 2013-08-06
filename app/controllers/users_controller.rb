@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
+  load_and_authorize_resource
+
   def index
     @users = User.all
 

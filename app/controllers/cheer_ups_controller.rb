@@ -2,12 +2,10 @@ class CheerUpsController < ApplicationController
   # GET /cheer_ups
   # GET /cheer_ups.json
 
-  before_filter :authenticate_user!
-
+  load_and_authorize_resource
 
   def index
     @cheer_ups = CheerUp.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cheer_ups }
@@ -46,7 +44,7 @@ class CheerUpsController < ApplicationController
   def create
     params[:cheer_up][:user_id] = current_user.id
     @cheer_up = CheerUp.new(params[:cheer_up])
-    
+
     respond_to do |format|
       if @cheer_up.save
         format.html { redirect_to @cheer_up, notice: 'Cheer up was successfully created.' }

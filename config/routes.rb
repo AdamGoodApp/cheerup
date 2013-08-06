@@ -1,7 +1,7 @@
 Cheerups::Application.routes.draw do
   devise_for :users
 
-  resources :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show]
 
   root to: "users#index"
   resources :cheer_ups
