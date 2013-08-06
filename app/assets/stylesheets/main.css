@@ -10,3 +10,7 @@ body {
 	background-image:url('cubackground.png');
 	width: 480px;
 }
+
+.cuimage {
+	margin: auto;
+}
