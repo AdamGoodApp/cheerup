@@ -17,12 +17,12 @@ class CheerUp < ActiveRecord::Base
   scope :with_user, -> { includes(:user)}
   scope :with_votes, -> { includes(:votes)}
 
-  def vote_up
-    @cheer_up.liked_by current_user
+  def vote_up(user)
+    self.liked_by user
   end
 
-  def vote_down
-    @cheer_up.downvote_from current_user
+  def vote_down(user)
+    self.downvote_from user
   end
 
   def rating

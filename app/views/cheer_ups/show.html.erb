@@ -27,8 +27,11 @@
           <b>Rating:</b>
           <%= @cheer_up.rating %>
         </div>
+
         <%= link_to 'Edit', edit_cheer_up_path(@cheer_up), class: "btn" %> |
         <%= link_to 'Back', cheer_ups_path, class: "btn" %>
+        <%= link_to 'up vote', upvote_path(@cheer_up.id), class: 'btn' %>
+        <%= link_to 'down vote', downvote_path(@cheer_up.id), class: 'btn' %>
   </div>
 
 </div>
