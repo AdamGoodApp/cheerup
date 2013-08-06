@@ -21,7 +21,7 @@ gem 'localtunnel'
 gem 'proxylocal'
 gem 'acts_as_votable'
 
-group :development, :test do
+group :development do
   gem 'pry-rails'
   gem 'pry-stack_explorer'
   gem 'annotate'
@@ -31,6 +31,12 @@ group :development, :test do
   gem 'meta_request'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem "database_cleaner"
+  gem "shoulda"
+  # gem "capybara"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
