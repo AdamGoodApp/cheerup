@@ -6,6 +6,50 @@ body {
 	background-size: 100% 100%;
       }
 
+/**** Launch Page CSS ****/
+/*** Top div ***/
+.launch_container{
+  background-image: url(beagleavatar.jpg);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100% 100%;
+      }
+.launch_div_top{
+  overflow: auto;
+ }
+.launch_top_left{
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 50%;
+}
+.launch_top_left h1{
+  font-size: 50px;
+  color: pink;
+  text-shadow: -1px 0 black, 0 5px black, 1px 0 black, 0 -1px black;
+}
+.launch_top_left p{
+  font-size: 30px;
+  color: pink;
+  text-shadow: -1px 0 black, 0 4px black, 1px 0 black, 0 -1px black;
+}
+.launch_top_right{
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  width:40%;
+  height: 50%;
+}
+
+/*** Middle Div ***/
+.launch_div_middle{
+  overflow: auto;
+}
+/*** Bottom Div***/
+
+
+/*** CHEERUPS***/
 .cheerup {
   border: black 1px solid;
   margin: 10px 10px 10px 10px;
@@ -23,7 +67,7 @@ body {
       border-radius: 5px;
 }
 
-<<<<<<< HEAD
+/*** SNAPSHOT BIO***/
   #mini_profile {
     background: #ff7f50;
     background-size: 100% 100%;
@@ -32,11 +76,9 @@ body {
     border-style: ridge;
     border-color: pink
   }
-
 #left_sidebar {
     float:left;
   }
-
 #friend_list {
     background: #ff7f50;
     background-size: 100% 100%;
@@ -45,7 +87,6 @@ body {
     border-style: ridge;
     border-color: pink
   }
-=======
 
 /**** Isotope Filtering ****/
 
@@ -96,4 +137,4 @@ body {
        -o-transition-duration: 0s;
           transition-duration: 0s;
 }
->>>>>>> eef18d33592c5de7d1a33107be71fe1be3d9332c
+
