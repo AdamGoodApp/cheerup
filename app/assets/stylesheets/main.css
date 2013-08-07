@@ -1,3 +1,5 @@
+*  { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 body {
 	color: black;
 	background-image:url('new_background.jpg');
@@ -6,25 +8,18 @@ body {
 	background-size: 100% 100%;
       }
 
+  .navbar-inner .pull-right img {
+    width: 30px;
+  }
 
-#cu {
-    color: black;
-  background-image:url('new_background.jpg');
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-size: 100% 100%;
+
+#homepage_container {
+  width: 100%;
 }
 
-.cheerup {
-  border: black 1px solid;
-  margin: 10px 10px 10px 10px;
-  padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-  background: #e67e22  ;
-  max-width: 480px;
+.cu_feed_options {
+margin: 20px;
 }
-
 .cuimage {
 margin: auto;
       height: auto;
@@ -35,6 +30,128 @@ margin: auto;
 /**** NAV BAR ****/
 .brand{
   font-size: 80px;
+}
+
+
+
+/*** CHEERUPS***/
+
+.bio {
+}
+
+.biomain {
+  background-image:url('cubg18.png');
+  background-size: cover;
+  background: rgba(0,0,0,0.2);
+  padding: 20px 10px 10px 10px;
+
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.content {
+  margin: 1;
+  margin-bottom: 11px;
+  text-align:justify;
+}
+
+.culeft {
+  margin-left: 20px;
+  max-width: 270px;
+  float: left;
+}
+
+
+
+.curight {
+  margin-left: 20px;
+  margin-top: 20px;
+  width:100%;
+}
+
+#friend_list {
+  background-image:url('cubg18.png');
+  background-size: cover;
+  padding: 10px 10px 10px 10px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 480px;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
 
 
@@ -132,100 +249,35 @@ overflow: auto;
   background-repeat:no-repeat;
   min-height: 600px;
 }
-/*** CHEERUPS***/
 
-.bio {
-  width: 105px;
+
+
+
+@media only screen and (max-width : 800px) {
+  .navbar-inner .pull-right img {
+    display: none;
+  }
 }
 
-.biomain {
-  background-image:url('cubg18.png');
-  background-size: 100% 100%;
-  padding-top: 20px;
-  padding-bottom: 7px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  margin-bottom: 140px;
-}
+@media only screen and (max-width : 568px) {
+  .culeft {
+    display: none;
+    float: left;
+  }
 
-.content {
-  margin: 1;
-  margin-bottom: 11px;
-  text-align:justify;
-  width: 242px;
-}
-
-.culeft {
-  margin-left: 56px;
-}
-
-.curight {
-  margin-left: 94px;
-  margin-top: 8em;
-}
-
-#friend_list {
-  background-image:url('cubg18.png');
-  background-size: 100% 100%;
-  padding-top: 20px;
-  padding-bottom: 7px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  margin-left: -21px;
-}
-
-
-
-/**** Isotope Filtering ****/
+  .curight {
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 100%;
+    float: left;
+  }
 
 .isotope-item {
   z-index: 2;
-  max-width: 380px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  max-width: 480px;
 }
 
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
 }
-
-/**** Isotope CSS3 transitions ****/
-
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
-

@@ -1,16 +1,13 @@
 
-<div class="row">
-  <div class="span5 culeft">
-    <div class="row biomain">
-      <div class="span2 bio">
+<div id='homepage_container' class='cf'>
+  <div class="cf culeft">
+    <div class=" biomain">
+      <div class="bio">
         <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
         <h4><%= @user.firstname %> <%= @user.lastname %></h4>
       </div>
-      <div class="span3 content">
+      <div class="content">
         <%= @user.bio %>
-        <div> 
-        <h5><%= @user.created_at %></h5>
-        </div>
       </div>
     </div>
 
@@ -21,15 +18,17 @@
   </div>
 
 
-  <div class="span6 curight"> 
-  <div class="filter option-set btn-group" data-filter-group="category" >
+  <div class="cf curight">
+  <div class="cu_feed_options filter option-set btn-group" data-filter-group="category" >
     <a href="#" data-filter-value=""><button type="button" class="btn btn-info">Global</button></a>
     <a href="#" data-filter-value=".adam"><button type="button" class="btn btn-info">Trending</button></a>
     <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Friends</button></a>
     <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Yours</button></a>
   </div>
-  <div id='cu_feed'>
+
+  <div id='cu_feed' >
     <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
   </div>
 
+</div>
 </div>

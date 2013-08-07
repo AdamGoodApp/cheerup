@@ -1,5 +1,6 @@
+
 <% cheer_ups.each do |cheer_up| %>
-<div class="cheer_up">
+<div class="cu_<%=cheer_up.id%> cheer_up">
   <% if cheer_up.image_upload.length > 0 %>
   <div class="cuimage">
     <%= image_tag cheer_up.image_upload.detail.url %>

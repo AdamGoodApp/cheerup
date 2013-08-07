@@ -14,9 +14,10 @@
         <ul class="nav">
           <li class="divider-vertical"></li>
           <li><%= link_to('Home', home_path) %></li>
-          <li class="divider-vertical"></li>
+<!--           <li class="divider-vertical"></li>
           <li><%= link_to('CheerUps', cheer_ups_path)%></li>
-        </ul>
+ -->
+         </ul>
         <!--search bar in nav-->
         <form class="navbar-search pull-left">
           <input type="text" class="search-query" placeholder="Search">
@@ -38,7 +39,7 @@
           <% end %>
         </div><!--pull-right-->
       </div><!--navbar-->
-
+    </div>
     <% flash.each do |name, message| %>
     <div class='flash-message flash-message-<%=name%>'>
     <%= message %>
