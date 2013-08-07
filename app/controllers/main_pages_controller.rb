@@ -2,7 +2,7 @@ class MainPagesController < ApplicationController
 
   def home
     @cheer_ups = CheerUp.all
-
+    @user = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cheer_ups }
