@@ -1,5 +1,4 @@
-*  { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-}
+
 body {
 	color: black;
 	background-image:url('new_background.jpg');
@@ -18,8 +17,16 @@ body {
 }
 
 .cu_feed_options {
-margin: 20px;
+margin: 0px 0px 20px 20px;
 }
+
+.cucontent {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 28px;
+  line-height:35px;
+}
+
+
 .cuimage {
 margin: auto;
       height: auto;
@@ -36,9 +43,16 @@ margin: auto;
 
 /*** CHEERUPS***/
 
-.bio {
+.bio img {
+  border-radius: 30px;
+  margin-top: -10px;
+  float: left;
 }
 
+.bio_name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 .biomain {
   background-image:url('cubg18.png');
   background-size: cover;
@@ -52,8 +66,7 @@ margin: auto;
 }
 
 .content {
-  margin: 1;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   text-align:justify;
 }
 
@@ -66,14 +79,14 @@ margin: auto;
 
 
 .curight {
-  margin-left: 20px;
-  margin-top: 20px;
+  margin: 0px 0px 0px 20px;
   width:100%;
 }
 
 #friend_list {
   background-image:url('cubg18.png');
   background-size: cover;
+  background: rgba(0,0,0,0.2);
   padding: 10px 10px 10px 10px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -89,7 +102,7 @@ margin: auto;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  max-width: 480px;
+  max-width: 320px;
 }
 
 .isotope-hidden.isotope-item {
@@ -251,9 +264,7 @@ overflow: auto;
 }
 
 
-
-
-@media only screen and (max-width : 800px) {
+@media only screen and (min-width : 568px) {
   .navbar-inner .pull-right img {
     display: none;
   }
@@ -265,9 +276,9 @@ overflow: auto;
     float: left;
   }
 
+
   .curight {
-    margin-left: 5px;
-    margin-top: 5px;
+    margin: 5px;
     width: 100%;
     float: left;
   }
