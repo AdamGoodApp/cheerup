@@ -1,1 +1,31 @@
-<h1>Launch Page<h1>
+<div class="launch_container">
+  <div class="launch_div_one">
+    <div class="launch_one_left" >
+      <h1>Get happy with Cheerup!</h1>
+        <p>
+          Chase the blues away with the Cheerup app.  Members create and share content that makes makes us happy.<br><br>
+          Hey!!! Hey you!!! Do you have any food!?!?! Woof!! Bark!!! Grr!!!
+        </p>
+    </div>
+    <div class="launch_one_right">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.label :email, class: "form_label" %>
+        <%= f.email_field :email, :autofocus => true %>
+        <%= f.label :password, class: "form_label" %>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirm, class: "form_label" %>
+        <%= f.password_field :password_confirmation %><br>
+        <%= f.submit :GO!, class: "btn btn-large btn-success" %>
+      <% end %>
+    </div><!--launch_one_right-->
+  </div><!--launch_one_top-->
+
+  <div class="launch_div_two"></div></div>
+  <div class="launch_div_three"></div>
+  <div class="launch_div_four"></div>
+  <div class="launch_div_five"></div>
+  <div class="launch_div_six"></div>
+  <div class="launch_div_seven"></div>
+
+</div><!--Launch Container-->

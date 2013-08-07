@@ -1,10 +1,19 @@
 body {
-	color: #fff;
+	color: black;
 	background-image:url('new_background.jpg');
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-size: 100% 100%;
       }
+
+<<<<<<< HEAD
+#cu {
+    color: black;
+  background-image:url('new_background.jpg');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100% 100%;
+}
 
 .cheerup {
   border: black 1px solid;
@@ -12,22 +21,188 @@ body {
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-  background: #e67e22;
+  background: #e67e22  ;
   max-width: 480px;
 }
 
 .cuimage {
-	margin: auto;
+margin: auto;
       height: auto;
       padding: 5px;
       border-radius: 5px;
 }
+
+/**** NAV BAR ****/
+.brand{
+  font-size: 80px;
+}
+
+
+
+/**** LAUNCH PAGE ****/
+.form_label{
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
+  line-height: 30px;
+}
+.launch_div_one{
+  overflow: auto;
+  background-size: 100%;
+  background-image: url(beagleavatar.jpg);
+  background-repeat:no-repeat;
+=======
+/**** NAV BAR ****/
+.brand{
+  font-size: 80px;
+}
+
+
+
+/**** LAUNCH PAGE ****/
+.form_label{
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
+  line-height: 30px;
+}
+.launch_div_one{
+  overflow: auto;
+  background-size: 100%;
+  background-image: url(beagleavatar.jpg);
+  background-repeat:no-repeat;
+>>>>>>> 0ca4a6d8f5e926043eae42591741c99b8588ad01
+  background-position: center center;
+  min-height: 600px;
+  text-align: center;
+ }
+.launch_one_left{
+  display: inline-block;
+  width: 60%;
+  height: 50%;
+  text-align: left;
+  position: relative;
+  top: -70px;
+}
+.launch_one_left h1{
+  font-size: 50px;
+  color: white;
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+}
+.launch_one_left p{
+  font-size: 30px;
+  color: white;
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+  line-height: 30px;
+}
+.launch_one_right{
+  margin-top: 50px;
+  width:30%;
+  height: 50%;
+  display: inline-block;
+
+}
+.launch_div_two{
+  overflow: auto;
+  background-image: url(navigation.png);
+  background-repeat:no-repeat;
+  min-height: 500px;
+  background-size: 100% 100%;
+}
+.launch_div_three{
+overflow: auto;
+  background-position: center center;
+  background-color: #fff;
+  background-image: url(discover.png);
+  background-repeat:no-repeat;
+   background-size: 100% 100%;
+  min-height: 750px;
+}
+.launch_div_four{
+  overflow: auto;
+  background-image: url(cu.png);
+  background-color: blue;
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  min-height: 550px;
+}
+.launch_div_five{
+overflow: auto;
+  background-size: 100%;
+  background-image: url(friends.png);
+  background-repeat:no-repeat;
+  min-height: 600px;
+  background-size: 100% 100%;
+  min-height: 550px;
+}
+
+.launch_div_six{
+  overflow: auto;
+  background-size: 100%;
+  background-image: url(mobile.png);
+  background-repeat:no-repeat;
+  min-height: 710px;
+   background-size: 100% 100%;
+  min-height: 550px;
+}
+.launch_div_seven{
+overflow: auto;
+  background-size: 100%;
+  background-image: url(footer.png);
+  background-repeat:no-repeat;
+  min-height: 600px;
+}
+/*** CHEERUPS***/
+
+.bio {
+  width: 105px;
+}
+
+.biomain {
+  background-image:url('cubg18.png');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-bottom: 140px;
+}
+
+.content {
+  margin: 1;
+  margin-bottom: 11px;
+  text-align:justify;
+  width: 242px;
+}
+
+.culeft {
+  margin-left: 56px;
+}
+
+.curight {
+  margin-left: 94px;
+  margin-top: 8em;
+}
+
+#friend_list {
+  background-image:url('cubg18.png');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-left: -21px;
+}
+
 
 
 /**** Isotope Filtering ****/
 
 .isotope-item {
   z-index: 2;
+  max-width: 380px;
 }
 
 .isotope-hidden.isotope-item {
@@ -73,3 +248,4 @@ body {
        -o-transition-duration: 0s;
           transition-duration: 0s;
 }
+

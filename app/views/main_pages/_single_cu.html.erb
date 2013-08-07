@@ -1,23 +1,36 @@
+<style type="text/css">
+  #cu {
+    background: url('<%= asset_path(randomized_background_image) %>') no-repeat fixed;
+    background-size: 100% 100%;
+    width: 480px;
+  }
+</style>
+
 <% cheer_ups.each do |cheer_up| %>
-<div class="container cheer_up">
-      <div class="cu2">
+<div id="cu" class="container">
+  <div class="row">
+    <div class="span2 profileimage">
+      <%= image_tag @cheer_up.user.image_upload.thumb.url %>
+    </div>
+
+      <div class="span4 cu2">
         <div class="cuimage">
-          <% if cheer_up.image_upload.length > 0 %>
-          <%= image_tag cheer_up.image_upload.detail.url %>
+          <% if @cheer_up.image_upload.length > 0 %>
+          <%= image_tag @cheer_up.image_upload.detail.url %>
           <% end %>
         </div>
 
         <div class="cusound">
-          <% if cheer_up.sound_upload.length > 0 %>
+          <% if @cheer_up.sound_upload.length > 0 %>
           <audio controls>
-          <source src="<%= cheer_up.sound_upload %>" type="audio/ogg">
-          <source src="<%= cheer_up.sound_upload %>" type="audio/mpeg">
+          <source src="<%= @cheer_up.sound_upload %>" type="audio/ogg">
+          <source src="<%= @cheer_up.sound_upload %>" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio>
           <% end %>
         </div>
         <div class="cucontent">
-          <%= cheer_up.content %>
+          <%= @cheer_up.content %>
         </div>
         <div class="curating">
           <b>Rating:</b>
@@ -35,5 +48,5 @@
   </div>
 
 </div>
+</div>
 <% end %>
-
