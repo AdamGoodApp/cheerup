@@ -99,6 +99,7 @@ body {
 
 .isotope-item {
   z-index: 2;
+  max-width: 380px;
 }
 
 .isotope-hidden.isotope-item {

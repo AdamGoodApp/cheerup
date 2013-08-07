@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="span5 culeft">
     <div class="row biomain">
@@ -13,16 +14,31 @@
       </div>
     </div>
 
+
     <div id='friend_list'>
       <h3>FRIEND LIST</h3>
     </div>
   </div>
+
 
   <div class="span6 curight">
     <div id='cu_nav_bar'>
     </div>
     <div>
         <%= render partial: 'single_cu', locals: {cheer_ups: @cheer_ups}  %>
+
+  <div id='cu_feed_container' class='container'>
+  <h2>Filter CheerUps</h2>
+  <ul class="filter option-set" data-filter-group="category">
+    <a href="#" data-filter-value=""><li>all</li></a>
+    <a href="#" data-filter-value=".full"><li>full</li></a>
+    <a href="#" data-filter-value=".empty"><li>empty</li></a>
+  </ul>
+    <div id='cu_nav_bar'>
+    </div>
+    <div id='cu_feed'>
+        <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
+
     </div>
   </div>
 
