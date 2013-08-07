@@ -2,9 +2,6 @@
 
 $(document).ready(init);
 
-$("a[data-cheer_up_id]").on("ajax:success", function() {
-    return alert("The js file is being called.");
-  });
 
 function init() {
     var things = $('#cu_feed');
@@ -13,6 +10,25 @@ function init() {
     things.isotope({
         itemSelector : '.cheer_up'
     });
+
+    // $("a[data-cheer_up_id]").on("click", function(event) {
+    //     event.preventDefault(); // prevent the click from linking anywhere
+    //     var href = $(this).data('href');
+    //     $.get(href, {
+    //         success:function(){
+    //             console.log("The js file is being called.");
+    //                 $.getJSON( '/cheer_ups/downvote', function(json_obj){
+    //             console.log(json_obj);
+    //             });
+    //         }
+    //     });
+
+    // });
+
+
+
+
+
 
     // when everything loads, make the "all" options selected
     $('.filter a[data-filter-value=""]').addClass('selected');
