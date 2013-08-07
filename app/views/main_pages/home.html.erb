@@ -1,14 +1,28 @@
+
+<h1>This is Your Happy Place!!!</h1>
+
 <h1>Home Page</h1>
 
 <p id="notice"><%= notice %></p>
 
-<div >
+<div id='homepage' class='container'>
 
   <div id='left_sidebar'>
+
     <div id='mini_profile'>
-    </div>
+        <h3>SNAP SHOT BIO</h3>
+        <p>
+          <h3><%= @user.firstname %> <%= @user.lastname %></h3>
+        </p>
+        <p>
+          <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
+           <%= @user.bio %>
+        </p>
+    </div><!--SNAP SHOT BIO-->
+
     <div id='friend_list'>
-    </div>
+      <h3>FRIEND LIST</h3>
+    </div><!--FRIEND LIST-->
   </div> <!-- End .left_sidebar -->
 
   <div id='cu_feed_container' class='container'>
