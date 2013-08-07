@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :on => :create
   validates :firstname, presence: true, :on => :update
   validates :lastname, presence: true, :on => :update
-  validates :bio, presence: true, :on => :update
+  validates :bio, presence: true, length: { maximum: 141 }, :on => :update
 
   def stats
     number_of_CU = cheer_ups.count

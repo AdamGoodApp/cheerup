@@ -106,42 +106,50 @@ overflow: auto;
   min-height: 600px;
 }
 /*** CHEERUPS***/
-.cheerup {
-  border: black 1px solid;
-  margin: 10px 10px 10px 10px;
-  padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-  background: #e67e22;
+
+.bio {
+  width: 105px;
 }
 
-.cuimage {
-	margin: auto;
-      height: auto;
-      padding: 5px;
-      border-radius: 5px;
+.biomain {
+  background-image:url('cubg18.png');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-bottom: 140px;
 }
 
-/*** SNAPSHOT BIO***/
-  #mini_profile {
-    background: #ff7f50;
-    background-size: 100% 100%;
-    width: 480px;
-    font-color: black;
-    border-style: ridge;
-    border-color: pink
-  }
-#left_sidebar {
-    float:left;
-  }
+.content {
+  margin: 1;
+  margin-bottom: 11px;
+  text-align:justify;
+  width: 242px;
+}
+
+.culeft {
+  margin-left: 56px;
+}
+
+.curight {
+  margin-left: 94px;
+  margin-top: 8em;
+}
+
 #friend_list {
-    background: #ff7f50;
-    background-size: 100% 100%;
-    width: 480px;
-    font-color: black;
-    border-style: ridge;
-    border-color: pink
-  }
+  background-image:url('cubg18.png');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-left: -21px;
+}
+
+
 
 /**** Isotope Filtering ****/
 

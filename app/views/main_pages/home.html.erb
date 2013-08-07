@@ -1,29 +1,31 @@
 
-<h1>This is Your Happy Place!!!</h1>
+<div class="row">
+  <div class="span5 culeft">
+    <div class="row biomain">
+      <div class="span2 bio">
+        <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
+        <h4><%= @user.firstname %> <%= @user.lastname %></h4>
+      </div>
+      <div class="span3 content">
+        <%= @user.bio %>
+        <div> 
+        <h5><%= @user.created_at %></h5>
+        </div>
+      </div>
+    </div>
 
-<h1>Home Page</h1>
-
-<p id="notice"><%= notice %></p>
-
-<div id='homepage' class='container'>
-
-  <div id='left_sidebar'>
-
-    <div id='mini_profile'>
-        <h3>SNAP SHOT BIO</h3>
-        <p>
-          <h3><%= @user.firstname %> <%= @user.lastname %></h3>
-        </p>
-        <p>
-          <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
-           <%= @user.bio %>
-        </p>
-    </div><!--SNAP SHOT BIO-->
 
     <div id='friend_list'>
       <h3>FRIEND LIST</h3>
-    </div><!--FRIEND LIST-->
-  </div> <!-- End .left_sidebar -->
+    </div>
+  </div>
+
+
+  <div class="span6 curight">
+    <div id='cu_nav_bar'>
+    </div>
+    <div>
+        <%= render partial: 'single_cu', locals: {cheer_ups: @cheer_ups}  %>
 
   <div id='cu_feed_container' class='container'>
   <h2>Filter CheerUps</h2>
@@ -36,7 +38,8 @@
     </div>
     <div id='cu_feed'>
         <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
-    </div>
 
-  </div><!-- End .cu_feed_container -->
+    </div>
+  </div>
+
 </div>
