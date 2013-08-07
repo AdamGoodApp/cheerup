@@ -6,7 +6,7 @@ body {
 	background-size: 100% 100%;
       }
 
-<<<<<<< HEAD
+
 #cu {
     color: black;
   background-image:url('new_background.jpg');
@@ -51,31 +51,11 @@ margin: auto;
   background-size: 100%;
   background-image: url(beagleavatar.jpg);
   background-repeat:no-repeat;
-=======
-/**** NAV BAR ****/
-.brand{
-  font-size: 80px;
-}
-
-
-
-/**** LAUNCH PAGE ****/
-.form_label{
-  font-size: 20px;
-  color: white;
-  text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
-  line-height: 30px;
-}
-.launch_div_one{
-  overflow: auto;
-  background-size: 100%;
-  background-image: url(beagleavatar.jpg);
-  background-repeat:no-repeat;
->>>>>>> 0ca4a6d8f5e926043eae42591741c99b8588ad01
   background-position: center center;
   min-height: 600px;
   text-align: center;
  }
+
 .launch_one_left{
   display: inline-block;
   width: 60%;
