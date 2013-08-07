@@ -2,6 +2,10 @@
 
 $(document).ready(init);
 
+$("a[data-cheer_up_id]").on("ajax:success", function() {
+    return alert("The js file is being called.");
+  });
+
 function init() {
     var things = $('#cu_feed');
     filters = {};
