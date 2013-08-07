@@ -6,6 +6,31 @@ body {
 	background-size: 100% 100%;
       }
 
+#cu {
+    color: black;
+  background-image:url('new_background.jpg');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: 100% 100%;
+}
+
+.cheerup {
+  border: black 1px solid;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  background: #e67e22  ;
+  max-width: 480px;
+}
+
+.cuimage {
+margin: auto;
+      height: auto;
+      padding: 5px;
+      border-radius: 5px;
+}
+
 /**** NAV BAR ****/
 .brand{
   font-size: 80px;

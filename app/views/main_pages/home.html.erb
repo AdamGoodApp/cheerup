@@ -22,12 +22,12 @@
 
 
   <div class="span6 curight"> 
-  <h2>Filter CheerUps</h2>
-  <ul class="filter option-set" data-filter-group="category">
-    <a href="#" data-filter-value=""><li>all</li></a>
-    <a href="#" data-filter-value=".full"><li>full</li></a>
-    <a href="#" data-filter-value=".empty"><li>empty</li></a>
-  </ul>
+  <div class="filter option-set btn-group" data-filter-group="category" >
+    <a href="#" data-filter-value=""><button type="button" class="btn btn-info">Global</button></a>
+    <a href="#" data-filter-value=".adam"><button type="button" class="btn btn-info">Trending</button></a>
+    <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Friends</button></a>
+    <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Yours</button></a>
+  </div>
   <div id='cu_feed'>
     <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
   </div>
