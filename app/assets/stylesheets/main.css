@@ -55,6 +55,11 @@ margin: auto;
       border-radius: 5px;
 }
 
+.profileimage {
+  height: 40px;
+  width: 40px;
+}
+
 /**** NAV BAR ****/
 .brand{
   font-size: 80px;
