@@ -9,6 +9,10 @@ class MainPagesController < ApplicationController
     end
   end
 
+  def new
+    @Cheer_ups = CheerUp.new
+  end
+
   def launch
   end
 

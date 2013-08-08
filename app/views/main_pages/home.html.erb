@@ -4,21 +4,24 @@
     <div class="row biomain">
       <div class="span2 bio">
         <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
-        <h4><%= @user.firstname %> <%= @user.lastname %></h4>
+        <h4><%= @user.firstname %><%= @user.lastname %></h4>
       </div>
       <div class="span3 content">
         <%= @user.bio %>
-        <div> 
+        <div>
         <h5><%= @user.created_at %></h5>
         </div>
       </div>
+
     </div>
 
+      <%= link_to('Create a Cheerup!', new_cheer_up_path, :class => "btn btn-large btn-block btn-primary")  %>
 
+      <br>
     <div id='friend_list'>
-      <h3>FRIEND LIST</h3>
+        <h3>FRIEND LIST</h3>
+      </div>
     </div>
-  </div>
 
 
   <div class="span6 curight">
