@@ -87,12 +87,23 @@ class CheerUpsController < ApplicationController
   def upvote
     cheer_up = CheerUp.find(params[:id])
     cheer_up.vote_up(current_user)
-    redirect_to request.referer
+    respond_to do |format|
+      format.html { redirect_to(home_path) }
+      format.js {render :nothing => true, :status => 200, :content_type => 'text/javascript'}
+      format.json { head :no_content }
+    end
+
+    # redirect_to request.referer
   end
 
   def downvote
     cheer_up = CheerUp.find(params[:id])
     cheer_up.vote_down(current_user)
-    redirect_to request.referer
+    respond_to do |format|
+      format.html { redirect_to(home_path) }
+      format.js {render :nothing => true, :status => 200, :content_type => 'text/javascript' }
+      format.json { head :no_content }
+    end
+    # redirect_to request.referer
   end
 end

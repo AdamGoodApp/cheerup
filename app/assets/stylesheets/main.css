@@ -1,14 +1,196 @@
+
 body {
 	color: black;
+      /* fallback */
 	background-image:url('new_background.jpg');
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-size: 100% 100%;
-      }
+
+      /* Safari 4-5, Chrome 1-9 */
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,235,180)), to( rgb(60, 75, 105)));
+
+      /* Safari 5.1, Chrome 10+ */
+      background: -webkit-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+
+      /* Firefox 3.6+ */
+      background: -moz-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+
+      /* IE 10 */
+      background: -ms-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+
+      /* Opera 11.10+ */
+      background: -o-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+          }
+
+  .navbar-inner .pull-right img {
+    width: 30px;
+  }
+
+
+#homepage_container {
+  width: 100%;
+}
+
+.cu_feed_options {
+margin: 0px 0px 20px 20px;
+}
+
+.cucontent {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 28px;
+  line-height:35px;
+}
+
+
+.cuimage {
+margin: auto;
+      height: auto;
+      padding: 5px;
+      border-radius: 5px;
+}
 
 /**** NAV BAR ****/
 .brand{
   font-size: 80px;
+}
+
+
+
+/*** CHEERUPS***/
+
+.bio img {
+  border-radius: 30px;
+  margin-top: -10px;
+  float: left;
+}
+
+.bio_name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.biomain {
+  background-image:url('cubg18.png');
+  background-size: cover;
+  background: rgba(0,0,0,0.2);
+  padding: 20px 10px 10px 10px;
+
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-bottom: 10px;
+  text-align:justify;
+}
+
+.culeft {
+  margin-left: 20px;
+  max-width: 270px;
+  float: left;
+}
+
+.curight {
+  margin: 0px 0px 0px 20px;
+  width:100%;
+}
+
+#create_cheerup{
+  background-image:url('cubg18.png');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-left: -21px;
+  text-align: center
+}
+
+#friend_list {
+  background-image:url('cubg18.png');
+  background-size: cover;
+  background: rgba(0,0,0,0.2);
+  padding: 10px 10px 10px 10px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 320px;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
 
 
@@ -29,6 +211,7 @@ body {
   min-height: 600px;
   text-align: center;
  }
+
 .launch_one_left{
   display: inline-block;
   width: 60%;
@@ -105,111 +288,32 @@ overflow: auto;
   background-repeat:no-repeat;
   min-height: 394px;
 }
-/*** CHEERUPS***/
 
-.bio {
-  width: 105px;
+
+@media only screen and (min-width : 568px) {
+  .navbar-inner .pull-right img {
+    display: none;
+  }
 }
 
-.biomain {
-  background-image:url('cubg18.png');
-  background-size: 100% 100%;
-  padding-top: 20px;
-  padding-bottom: 7px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  margin-bottom: 140px;
-}
+@media only screen and (max-width : 568px) {
+  .culeft {
+    display: none;
+    float: left;
+  }
 
-.content {
-  margin: 1;
-  margin-bottom: 11px;
-  text-align:justify;
-  width: 242px;
-}
-
-.culeft {
-  margin-left: 56px;
-}
-
-.curight {
-  margin-left: 94px;
-  margin-top: 8em;
-}
-
-#friend_list {
-  background-image:url('cubg18.png');
-  background-size: 100% 100%;
-  padding-top: 20px;
-  padding-bottom: 7px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  margin-left: -21px;
-}
-
-
-#create_cheerup{
-  background-image:url('cubg18.png');
-  background-size: 100% 100%;
-  padding-top: 20px;
-  padding-bottom: 7px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  margin-left: -21px;
-  text-align: center
-}
-
-/**** Isotope Filtering ****/
+  .curight {
+    margin: 5px;
+    width: 100%;
+    float: left;
+  }
 
 .isotope-item {
   z-index: 2;
-  max-width: 380px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  max-width: 480px;
 }
 
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
 }
-
-/**** Isotope CSS3 transitions ****/
-
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
-

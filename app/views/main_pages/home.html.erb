@@ -1,16 +1,14 @@
 
-<div class="row">
-  <div class="span5 culeft">
-    <div class="row biomain">
-      <div class="span2 bio">
+<div id='homepage_container' class='cf'>
+  <div class="cf culeft">
+    <div class=" biomain">
+      <div class="bio cf">
         <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
-        <h4><%= @user.firstname %><%= @user.lastname %></h4>
+
+        <div class='bio_name cf'><%= @user.firstname %> <%= @user.lastname %></div>
       </div>
-      <div class="span3 content">
+      <div class="content">
         <%= @user.bio %>
-        <div>
-        <h5><%= @user.created_at %></h5>
-        </div>
       </div>
 
     </div>
@@ -24,25 +22,18 @@
     </div>
 
 
-  <div class="span6 curight">
-    <div id='cu_nav_bar'>
-    </div>
-    <div>
-        <%= render partial: 'single_cu', locals: {cheer_ups: @cheer_ups}  %>
-
-  <div id='cu_feed_container' class='container'>
-  <h2>Filter CheerUps</h2>
-  <ul class="filter option-set" data-filter-group="category">
-    <a href="#" data-filter-value=""><li>all</li></a>
-    <a href="#" data-filter-value=".full"><li>full</li></a>
-    <a href="#" data-filter-value=".empty"><li>empty</li></a>
-  </ul>
-    <div id='cu_nav_bar'>
-    </div>
-    <div id='cu_feed'>
-        <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
-
-    </div>
+  <div class="cf curight">
+  <div class="cu_feed_options filter option-set btn-group" data-filter-group="category" >
+    <a href="#" data-filter-value=""><button type="button" class="btn btn-info">Global</button></a>
+    <a href="#" data-filter-value=".adam"><button type="button" class="btn btn-info">Trending</button></a>
+    <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Friends</button></a>
+    <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Yours</button></a>
   </div>
+
+  <div id='cu_feed' >
+    <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
+  </div>
+
+</div>
 
 </div>
