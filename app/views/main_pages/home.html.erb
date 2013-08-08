@@ -11,7 +11,6 @@
       <div class="content">
         <%= @user.bio %>
       </div>
-
     </div>
 <!--insert the form here -->
 
@@ -20,10 +19,8 @@
      Create a Cheerup!
   </a>
   <div id="demo" class="collapse">
-    <%= render partial: "form", locals: {new_cheerup: CheerUp.new}  %>
+    <%= render partial: "main_pages/form", locals: {new_cheerup: CheerUp.new}  %>
   </div>
-
-<!--insert the form here -->
       <br>
     <div id='friend_list'>
         <h3>FRIEND LIST</h3>
