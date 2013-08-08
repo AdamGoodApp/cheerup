@@ -9,6 +9,7 @@ Cheerups::Application.routes.draw do
   resources :cheer_ups
   get 'cheer_ups/upvote/:id', to: 'cheer_ups#upvote', as: 'upvote'
   get 'cheer_ups/downvote/:id', to: 'cheer_ups#downvote', as: 'downvote'
+  get 'trending', to: 'main_pages#trending', as: 'trending'
 
 
   # The priority is based upon order of creation:

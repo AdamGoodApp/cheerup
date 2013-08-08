@@ -6,10 +6,11 @@ class SessionsController < Devise::RegistrationsController
     if user && user.valid_password?(params[:user][:password])
       set_flash_message(:notice, :signed_in)
       sign_in user
+      redirect_to home_path
     else
       set_flash_message(:notice, :invalid)
+      redirect_to request.referer
     end
-    redirect_to request.referer
   end
 
     # DELETE /resource/sign_out
