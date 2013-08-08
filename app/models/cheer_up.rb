@@ -19,14 +19,23 @@ class CheerUp < ActiveRecord::Base
 
   def vote_up(user)
     self.liked_by user
+    calc_rating
+    self.save
   end
 
   def vote_down(user)
     self.downvote_from user
+    calc_rating
+    self.save
   end
 
-  def rating
-    upvotes.size - downvotes.size
+  def calc_rating
+    self.rating = upvotes.size - downvotes.size
   end
+
+  # def rating
+  #   upvotes.size - downvotes.size
+  # end
+
 
 end
