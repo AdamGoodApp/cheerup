@@ -29,8 +29,8 @@
       <% if current_user %>
         <%= link_to 'Edit', edit_cheer_up_path(cheer_up) if cheer_up.user_id == current_user.id %>
         <% unless cheer_up.user_id == current_user.id then %>
-          <%= link_to 'up vote', upvote_path(cheer_up.id)%>
-          <%= link_to 'down vote', downvote_path(cheer_up.id)%>
+          <%= link_to image_tag("thumbsup.png"), upvote_path(cheer_up.id)%>
+          <%= link_to image_tag("thumbsdown.png"), downvote_path(cheer_up.id)%>
         <% end %>
       <% end %>
     </div>

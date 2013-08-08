@@ -27,13 +27,18 @@ body {
     width: 30px;
   }
 
+  .navmarg {
+    margin-bottom: 0px
+  }
+
 
 #homepage_container {
   width: 100%;
+  margin-top: 3em;
 }
 
 .cu_feed_options {
-margin: 0px 0px 20px 20px;
+margin: 0px 0px 4% 25%;
 }
 
 .cucontent {
@@ -88,13 +93,26 @@ margin: auto;
 
 .culeft {
   margin-left: 20px;
+  margin-right: 1em;
   max-width: 270px;
   float: left;
 }
 
 .curight {
   margin: 0px 0px 0px 20px;
-  width:100%;
+  
+}
+
+#create_cheerup{
+  background-image:url('cubg18.png');
+  background-size: 100% 100%;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  margin-left: -21px;
+  text-align: center
 }
 
 #create_cheerup{
@@ -128,7 +146,7 @@ margin: auto;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  max-width: 320px;
+  max-width: 200px;
 }
 
 .isotope-hidden.isotope-item {
