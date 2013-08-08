@@ -23,14 +23,14 @@
       </div>
       <div>
         <b>Rating:</b>
-        <%= cheer_up.rating %>
+        <span data-cheer_up_id_rating=<%= cheer_up.id %>><%= cheer_up.rating %></span>
       </div>
 
       <% if current_user %>
         <%= link_to 'Edit', edit_cheer_up_path(cheer_up) if cheer_up.user_id == current_user.id %>
         <% unless cheer_up.user_id == current_user.id then %>
-          <%= link_to 'up vote', upvote_path(cheer_up.id)%>
-          <%= link_to 'down vote', downvote_path(cheer_up.id)%>
+          <%= link_to 'up vote', upvote_path(cheer_up.id), remote: true %>
+          <%= link_to 'down vote', downvote_path(cheer_up.id), remote: true %>
         <% end %>
       <% end %>
     </div>

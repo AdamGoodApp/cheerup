@@ -8,6 +8,10 @@ end
 
 before_filter :store_location
 
+def after_sign_in_path_for(resource)
+  redirect_to home_path
+end
+
 def store_location
  # store last url - this is needed for post-login redirect to whatever the user last visited.
     if (request.fullpath != "/users/sign_in" && \
@@ -17,8 +21,5 @@ def store_location
     end
 end
 
-def after_sign_in_path_for(resource)
-  session[:previous_url] || root_path
-end
 
 end
