@@ -6,7 +6,7 @@ body {
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-size: 100% 100%;
-
+      min-height: 700px;
       /* Safari 4-5, Chrome 1-9 */
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,235,180)), to( rgb(60, 75, 105)));
 
@@ -118,7 +118,15 @@ margin: auto;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  max-width: 320px;
+  max-width: 250px;
+}
+
+.isotope-item.large{
+  max-width: 540px;
+}
+
+.isotope-item .cuimage img {
+  width: 100%;
 }
 
 .isotope-hidden.isotope-item {
@@ -279,7 +287,6 @@ overflow: auto;
   min-height: 600px;
 }
 
-
 @media only screen and (min-width : 568px) {
   .navbar-inner .pull-right img {
     display: none;
@@ -291,7 +298,6 @@ overflow: auto;
     display: none;
     float: left;
   }
-
 
   .curight {
     margin: 5px;

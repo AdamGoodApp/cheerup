@@ -72,6 +72,30 @@ function init() {
         things.isotope({ filter: selector });
     });
 
+    $('#cu_feed').isotope({
+    // Isotope ordering by rating
+    // Get all ratings
+    itemSelector : '#cu_feed',
+    getSortData : {
+        data_rating : function ( $elem ) {
+            return $elem.attr('data-rating');
+        }
+    }
+});
+
+
+
+$('#sort-by a').click(function(){
+  // get href attribute, minus the '#'
+  var sortName = $(this).attr('href').slice(1);
+  console.log("clicked sort option button");
+  console.log("run this command - $('#cu_feed').isotope({ sortBy : sortName })");
+  console.log("get this ouput - ");
+  console.log($('#cu_feed').isotope({ sortBy : sortName }));
+  $('#cu_feed').isotope({ sortBy : sortName });
+  return false;
+});
+
 }
 
     var color_set = new Array();
