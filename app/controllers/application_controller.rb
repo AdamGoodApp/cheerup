@@ -1,15 +1,19 @@
 class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
- redirect_to root_url , alert: "You can't access this page"
-end
+    redirect_to root_url , alert: "You can't access this page"
+  end
 
   protect_from_forgery
 
   before_filter :store_location
 
+def after_sign_up_path_for(resource)
+  home_path
+end
+
 def after_sign_in_path_for(resource)
-  redirect_to home_path
+  home_path
 end
 
 def store_location
