@@ -1,11 +1,27 @@
 
 body {
 	color: black;
+      /* fallback */
 	background-image:url('new_background.jpg');
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-size: 100% 100%;
-      }
+
+      /* Safari 4-5, Chrome 1-9 */
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,235,180)), to( rgb(60, 75, 105)));
+
+      /* Safari 5.1, Chrome 10+ */
+      background: -webkit-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+
+      /* Firefox 3.6+ */
+      background: -moz-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+
+      /* IE 10 */
+      background: -ms-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+
+      /* Opera 11.10+ */
+      background: -o-linear-gradient(top, rgb(60, 75, 105), rgb(255,235,180));
+          }
 
   .navbar-inner .pull-right img {
     width: 30px;
