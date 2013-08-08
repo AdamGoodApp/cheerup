@@ -12,9 +12,17 @@
         <%= @user.bio %>
       </div>
     </div>
+<!--insert the form here -->
 
-      <%= link_to('Create a Cheerup!', new_cheer_up_path, :class => "btn btn-large btn-block btn-primary")  %>
 
+  <a class="btn btn-large btn-block btn-primary" data-toggle="collapse" data-target="#demo">
+     Create a Cheerup!
+  </a>
+  <div id="demo" class="collapse">
+    <%= render partial: "form", locals: {new_cheerup: CheerUp.new}  %>
+  </div>
+
+<!--insert the form here -->
       <br>
     <div id='friend_list'>
         <h3>FRIEND LIST</h3>
