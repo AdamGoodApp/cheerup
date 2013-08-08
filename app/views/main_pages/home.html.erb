@@ -1,0 +1,107 @@
+
+<div id='homepage_container' class='cf'>
+  <% if signed_in? %>
+  <div class="cf culeft">
+    <div class=" biomain">
+      <div class="bio cf">
+        <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
+
+        <div class='bio_name cf'><%= @user.firstname %> <%= @user.lastname %></div>
+      </div>
+      <div class="content">
+        <%= @user.bio %>
+        <h4><%= current_user.overall_rating %></h4>
+      </div>
+
+      <a class="btn btn-large btn-block btn-primary" data-toggle="collapse" data-target="#demo">
+      Edit Your Profile!
+      </a>
+      <div id="demo" class="collapse">
+      <h2>Edit <%= resource.firstname %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field"><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :image_upload %><br />
+    <%= f.file_field :image_upload %>
+  </div>
+  <div class="field">
+    Remove Image
+  <%= f.check_box :remove_image_upload %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio %>
+  </div>
+
+
+  <div class="field"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password, :autocomplete => "off" %></div>
+
+  <div class="field"><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div class="field"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <%= f.password_field :current_password %></div>
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<%= link_to "Back", :back %>
+
+      </div>
+    </div>
+<!--insert the form here -->
+
+
+  <a class="btn btn-large btn-block btn-primary" data-toggle="collapse" data-target="#democheerup">
+     Create a Cheerup!
+  </a>
+
+  <div id="democheerup" class="collapse">
+    <%= render partial: "form", locals: {new_cheerup: CheerUp.new}  %>
+  </div>
+      <br>
+    <div id='friend_list'>
+        <h3>FRIEND LIST</h3>
+      </div>
+    </div>
+    <% end %>
+
+  <div class="cf curight">
+    <div class="cu_feed_options filter option-set btn-group cf" data-filter-group="category" >
+      <a href="#" data-filter-value=""><button type="button" class="btn btn-info">Global</button></a>
+      <% unless current_user.nil? %>
+      <a href="#" data-filter-value=".user_cheerup"><button type="button" class="btn btn-info">Yours</button></a>
+      <% end %>
+    </div>
+    <%= link_to 'Trending', trending_path, class: "cu_feed_options btn btn-info cf"%>
+
+
+  <div id='cu_feed' >
+    <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>
+  </div>
+
+</div>
+
+</div>

@@ -1,0 +1,10 @@
+## rails specific ignore options
+config/database.yml
+log/*
+tmp/*
+
+## generic files to ignore
+*~
+*.DS_Store
+*.swp
+*.out

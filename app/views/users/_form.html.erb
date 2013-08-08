@@ -25,7 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :image_upload %><br />
-    <%= f.text_field :image_upload %>
+    <%= f.file_field :image_upload %>
+  </div>
+  <div class="field">
+    Remove Image
+  <%= f.check_box :remove_image_upload %>
   </div>
   <div class="field">
     <%= f.label :bio %><br />

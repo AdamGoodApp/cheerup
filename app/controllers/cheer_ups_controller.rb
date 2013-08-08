@@ -1,9 +1,11 @@
 class CheerUpsController < ApplicationController
   # GET /cheer_ups
   # GET /cheer_ups.json
+
+  load_and_authorize_resource
+
   def index
     @cheer_ups = CheerUp.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cheer_ups }
@@ -14,7 +16,6 @@ class CheerUpsController < ApplicationController
   # GET /cheer_ups/1.json
   def show
     @cheer_up = CheerUp.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @cheer_up }
@@ -40,11 +41,11 @@ class CheerUpsController < ApplicationController
   # POST /cheer_ups
   # POST /cheer_ups.json
   def create
+    params[:cheer_up][:user_id] = current_user.id
     @cheer_up = CheerUp.new(params[:cheer_up])
-
     respond_to do |format|
       if @cheer_up.save
-        format.html { redirect_to @cheer_up, notice: 'Cheer up was successfully created.' }
+        format.html { redirect_to home_path, notice: 'Cheer up was successfully created.' }
         format.json { render json: @cheer_up, status: :created, location: @cheer_up }
       else
         format.html { render action: "new" }
@@ -79,5 +80,28 @@ class CheerUpsController < ApplicationController
       format.html { redirect_to cheer_ups_url }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    cheer_up = CheerUp.find(params[:id])
+    cheer_up.vote_up(current_user)
+    respond_to do |format|
+      format.html { redirect_to(home_path) }
+      format.js { }
+      format.json { head :no_content }
+    end
+
+    # redirect_to request.referer
+  end
+
+  def downvote
+    cheer_up = CheerUp.find(params[:id])
+    cheer_up.vote_down(current_user)
+    respond_to do |format|
+      format.html { redirect_to(home_path) }
+      format.js { }
+      format.json { head :no_content }
+    end
+    # redirect_to request.referer
   end
 end

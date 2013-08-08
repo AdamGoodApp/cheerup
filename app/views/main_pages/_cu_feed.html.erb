@@ -1,0 +1,52 @@
+
+
+<% cheer_ups.each do |cheer_up| %>
+<div class="cheer_up <%= 'large' if (cheer_up.sound_upload.length + cheer_up.image_upload.length) > 0 %> <%= "user_cheerup" if !(current_user.nil?) && cheer_up.user_id == current_user.id %> ">
+  <div>
+  <div class="profileimage cf">
+      <%= image_tag cheer_up.user.image_upload.thumb.url %>
+    </div>
+  <div class="profilename cf">
+      <%= cheer_up.user.firstname %> <%= cheer_up.user.lastname %>
+    </div>
+  </div>
+  <% if cheer_up.image_upload.length > 0 %>
+  <div class="cuimage">
+    <%= image_tag cheer_up.image_upload.detail.url %>
+  </div>
+  <% end %>
+
+
+  <% if cheer_up.sound_upload.length > 0 %>
+  <div class="cusound">
+    <audio controls>
+      <source src="<%= cheer_up.sound_upload %>" type="audio/ogg">
+        <source src="<%= cheer_up.sound_upload %>" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <% end %>
+
+      <div class="cucontent">
+        <%= cheer_up.content %>
+      </div>
+      <div>
+        <b>Rating:</b>
+        <span data-cheer_up_id_rating=<%= cheer_up.id %>><%= cheer_up.rating %></span>
+      </div>
+
+      <% if current_user %>
+        <% unless cheer_up.user_id == current_user.id then %>
+          <%= link_to image_tag("thumbsup.png"), upvote_path(cheer_up.id), remote: true%>
+          <%= link_to image_tag("thumbsdown.png"), downvote_path(cheer_up.id), remote: true%>
+        <% end %>
+      <% end %>
+    </div>
+    <% end %>
+
+<style type="text/css">
+<% cheer_ups.each do |cheer_up| %>
+  .cu_<%=cheer_up.id%> { background: url('<%= asset_path(randomized_background_image) %>') no-repeat fixed; background-size: cover;}
+<% end %>
+</style>
+

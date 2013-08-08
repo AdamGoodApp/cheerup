@@ -17,6 +17,7 @@
 
 <p>
   <b>Image upload:</b>
+  <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
   <%= @user.image_upload %>
 </p>
 
@@ -25,6 +26,5 @@
   <%= @user.bio %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_registration_path(@user) %> |
 <%= link_to 'Back', users_path %>

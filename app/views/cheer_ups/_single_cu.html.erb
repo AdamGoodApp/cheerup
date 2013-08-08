@@ -1,0 +1,39 @@
+<% cheer_ups.each do |cheer_up| %>
+<div id="cu" class="container cheer_up row">
+<!--     <div class="span2 profileimage">
+      <%= image_tag cheer_up.user.image_upload.thumb.url %>
+    </div>
+ -->
+      <div class="span4 cu2">
+        <div class="cuimage">
+          <% if cheer_up.image_upload.length > 0 %>
+          <%= image_tag cheer_up.image_upload.detail.url %>
+          <% end %>
+        </div>
+
+        <div class="cusound">
+          <% if cheer_up.sound_upload.length > 0 %>
+          <audio controls>
+          <source src="<%= cheer_up.sound_upload %>" type="audio/ogg">
+          <source src="<%= cheer_up.sound_upload %>" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+          <% end %>
+        </div>
+        <div class="cucontent">
+          <%= cheer_up.content %>
+        </div>
+        <div class="curating">
+          <b>Rating:</b>
+          <%= cheer_up.rating %>
+        </div>
+
+        <%= link_to 'Edit', edit_cheer_up_path(cheer_up), class: "btn" %> |
+        <%= link_to 'Back', cheer_ups_path, class: "btn" %>
+        <%= link_to 'up vote', upvote_path(cheer_up.id), class: 'btn' %>
+        <%= link_to 'down vote', downvote_path(cheer_up.id), class: 'btn' %>
+  </div>
+
+</div>
+<% end %>
+
