@@ -27,13 +27,18 @@ body {
     width: 30px;
   }
 
+  .navmarg {
+    margin-bottom: 0px
+  }
+
 
 #homepage_container {
   width: 100%;
+  margin-top: 3em;
 }
 
 .cu_feed_options {
-margin: 0px 0px 20px 20px;
+margin: 0px 0px 4% 25%;
 }
 
 .cucontent {
@@ -88,6 +93,7 @@ margin: auto;
 
 .culeft {
   margin-left: 20px;
+  margin-right: 1em;
   max-width: 270px;
   float: left;
 }
