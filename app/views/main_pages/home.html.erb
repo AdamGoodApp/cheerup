@@ -1,21 +1,27 @@
 
 <div id='homepage_container' class='cf'>
+  <% if signed_in? %>
   <div class="cf culeft">
     <div class=" biomain">
       <div class="bio cf">
         <%= image_tag @user.image_upload.thumb.url unless @user.image_upload.thumb.url.nil? %>
+
         <div class='bio_name cf'><%= @user.firstname %> <%= @user.lastname %></div>
       </div>
       <div class="content">
         <%= @user.bio %>
       </div>
+
     </div>
 
+      <%= link_to('Create a Cheerup!', new_cheer_up_path, :class => "btn btn-large btn-block btn-primary")  %>
 
+      <br>
     <div id='friend_list'>
-      <h3>FRIEND LIST</h3>
+        <h3>FRIEND LIST</h3>
+      </div>
     </div>
-  </div>
+    <% end %>
 
 
   <div class="cf curight">
@@ -31,4 +37,5 @@
   </div>
 
 </div>
+
 </div>
