@@ -29,12 +29,16 @@
     <% end %>
 
   <div class="cf curight">
-  <div class="cu_feed_options filter option-set btn-group" data-filter-group="category" >
-    <a href="#" data-filter-value=""><button type="button" class="btn btn-info">Global</button></a>
-    <a href="#" data-filter-value=".adam"><button type="button" class="btn btn-info">Trending</button></a>
-    <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Friends</button></a>
-    <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Yours</button></a>
-  </div>
+    <div class="cu_feed_options filter option-set btn-group" data-filter-group="category" >
+      <a href="#" data-filter-value=""><button type="button" class="btn btn-info">Global</button></a>
+      <a href="#" data-filter-value=".adam"><button type="button" class="btn btn-info">Trending</button></a>
+      <a href="#" data-filter-value=".empty"><button type="button" class="btn btn-info">Friends</button></a>
+      <a href="#" data-filter-value=".user_cheerup"><button type="button" class="btn btn-info">Yours</button></a>
+    </div>
+
+<ul id="sort-by">
+  <li><a href="#curating">trending</a></li>
+</ul>
 
   <div id='cu_feed' >
     <%= render partial: 'cu_feed', locals: {cheer_ups: @cheer_ups}  %>

@@ -1,12 +1,19 @@
 
 
 <% cheer_ups.each do |cheer_up| %>
-<div class="cheer_up">
+<div class="cheer_up <%= 'large' if cheer_up.sound_upload.length > 0 %> ">
+  <div class="profilename">
+      <%= cheer_up.user.firstname %> <%= cheer_up.user.lastname %>
+    </div>
+  <div class="profileimage">
+      <%= image_tag cheer_up.user.image_upload.thumb.url %>
+    </div>
   <% if cheer_up.image_upload.length > 0 %>
   <div class="cuimage">
     <%= image_tag cheer_up.image_upload.detail.url %>
   </div>
   <% end %>
+
 
   <% if cheer_up.sound_upload.length > 0 %>
   <div class="cusound">
@@ -21,7 +28,7 @@
       <div class="cucontent">
         <%= cheer_up.content %>
       </div>
-      <div class="curating">
+      <div>
         <b>Rating:</b>
         <%= cheer_up.rating %>
       </div>
