@@ -11,6 +11,7 @@
       <div class="content">
         <%= @user.bio %>
       </div>
+
       <a class="btn btn-large btn-block btn-primary" data-toggle="collapse" data-target="#demo">
       Edit Your Profile!
       </a>
@@ -68,7 +69,6 @@
 <%= link_to "Back", :back %>
 
       </div>
-
     </div>
 <!--insert the form here -->
 
@@ -76,11 +76,10 @@
   <a class="btn btn-large btn-block btn-primary" data-toggle="collapse" data-target="#democheerup">
      Create a Cheerup!
   </a>
+
   <div id="democheerup" class="collapse">
     <%= render partial: "form", locals: {new_cheerup: CheerUp.new}  %>
   </div>
-
-<!--insert the form here -->
       <br>
     <div id='friend_list'>
         <h3>FRIEND LIST</h3>
