@@ -58,6 +58,11 @@ margin: auto;
 .profileimage {
   height: 40px;
   width: 40px;
+  float: left;
+}
+
+.profileimage img {
+  border-radius: 10px;
 }
 
 /**** NAV BAR ****/

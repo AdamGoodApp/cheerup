@@ -2,12 +2,14 @@
 
 <% cheer_ups.each do |cheer_up| %>
 <div class="cheer_up <%= 'large' if (cheer_up.sound_upload.length + cheer_up.image_upload.length) > 0 %> <%= "user_cheerup" if !(current_user.nil?) && cheer_up.user_id == current_user.id %> ">
-  <div class="profilename">
-      <%= cheer_up.user.firstname %> <%= cheer_up.user.lastname %>
-    </div>
-  <div class="profileimage">
+  <div>
+  <div class="profileimage cf">
       <%= image_tag cheer_up.user.image_upload.thumb.url %>
     </div>
+  <div class="profilename cf">
+      <%= cheer_up.user.firstname %> <%= cheer_up.user.lastname %>
+    </div>
+  </div>
   <% if cheer_up.image_upload.length > 0 %>
   <div class="cuimage">
     <%= image_tag cheer_up.image_upload.detail.url %>
