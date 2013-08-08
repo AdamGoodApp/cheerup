@@ -15,21 +15,18 @@ u.save
 
 c = CheerUp.create(
   user_id: u.id,
-  rating: 0,
   content: 'Wine is constant proof that God loves us and loves to see us happy.',
   latitude: '51.502278',
   longitude: '-0.111237'
   )
 c = CheerUp.create(
   user_id: u.id,
-  rating: 0,
   content: 'The purpose of our lives is to be happy.',
   latitude: '51.50708',
   longitude: '-0.163765'
   )
 c = CheerUp.create(
   user_id: u.id,
-  rating: 0,
   content: 'A table, a chair, a bowl of fruit and a violin; what else does a man need to be happy?',
   latitude: '51.501269',
   longitude: '-0.141964'
