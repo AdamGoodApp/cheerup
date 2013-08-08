@@ -17,19 +17,6 @@ function init() {
         itemSelector : '.cheer_up'
     });
 
-    // $("a[data-cheer_up_id]").on("click", function(event) {
-    //     event.preventDefault(); // prevent the click from linking anywhere
-    //     var href = $(this).data('href');
-    //     $.get(href, {
-    //         success:function(){
-    //             console.log("The js file is being called.");
-    //                 $.getJSON( '/cheer_ups/downvote', function(json_obj){
-    //             console.log(json_obj);
-    //             });
-    //         }
-    //     });
-
-    // });
 
     // when everything loads, make the "all" options selected
     $('.filter a[data-filter-value=""]').addClass('selected');
@@ -72,16 +59,6 @@ function init() {
         things.isotope({ filter: selector });
     });
 
-    $('#cu_feed').isotope({
-    // Isotope ordering by rating
-    // Get all ratings
-    itemSelector : '#cu_feed',
-    getSortData : {
-        data_rating : function ( $elem ) {
-            return $elem.attr('data-rating');
-        }
-    }
-});
 
 
 
@@ -89,10 +66,7 @@ $('#sort-by a').click(function(){
   // get href attribute, minus the '#'
   var sortName = $(this).attr('href').slice(1);
   console.log("clicked sort option button");
-  console.log("run this command - $('#cu_feed').isotope({ sortBy : sortName })");
-  console.log("get this ouput - ");
-  console.log($('#cu_feed').isotope({ sortBy : sortName }));
-  $('#cu_feed').isotope({ sortBy : sortName });
+  console.log(sortName);
   return false;
 });
 
