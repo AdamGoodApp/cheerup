@@ -17,7 +17,7 @@ class MainPagesController < ApplicationController
   end
 
   def trending
-    @cheer_ups = CheerUp.order("rating").all
+    @cheer_ups = CheerUp.order("rating DESC").all
     @user = current_user
     render :home
   end
