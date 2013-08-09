@@ -87,7 +87,7 @@ class CheerUpsController < ApplicationController
     cheer_up.vote_up(current_user)
     respond_to do |format|
       format.html { redirect_to(home_path) }
-      format.js {render :nothing => true, :status => 200, :content_type => 'text/javascript'}
+      format.js { }
       format.json { head :no_content }
     end
 
@@ -99,7 +99,7 @@ class CheerUpsController < ApplicationController
     cheer_up.vote_down(current_user)
     respond_to do |format|
       format.html { redirect_to(home_path) }
-      format.js {render :nothing => true, :status => 200, :content_type => 'text/javascript' }
+      format.js { }
       format.json { head :no_content }
     end
     # redirect_to request.referer

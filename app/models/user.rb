@@ -38,5 +38,14 @@ class User < ActiveRecord::Base
     self.role == role
   end
 
+  def overall_rating
+    r = self.cheer_ups.map { |c| c.rating.to_i }.sum
+    if r == 0
+      "Just Starting Out"
+    else r == [1..10]
+      "Learning The Ropes"
+    end
+  end
+
 
 end

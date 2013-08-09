@@ -15,10 +15,11 @@
         <ul class="nav">
           <li class="divider-vertical"></li>
           <li><%= link_to('Home', home_path) %></li>
-
+          <li><%= link_to 'Trending', trending_path %></li>
+<!--           <li class="divider-vertical"></li>
+          <li><%= link_to('CheerUps', cheer_ups_path)%></li>
+ -->
          </ul>
-
-
         <div class="pull-right">
           <% if current_user %>
             <%= image_tag current_user.image_upload.thumb.url %>

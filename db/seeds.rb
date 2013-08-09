@@ -45,18 +45,21 @@ u.save
 
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Most folks are as happy as they make up their minds to be.',
   latitude: '51.50034',
   longitude: '-0.162349'
   )
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'It\'s Gin O\'Clock!!!!',
   latitude: '51.500607',
   longitude: '-0.173593'
   )
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'I don\'t know the problem but alcohol is the answer',
   latitude: '51.497374',
   longitude: '-0.170288'
@@ -75,18 +78,21 @@ u.save
 
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Do not take life too seriously. You will never get out of it alive.',
   latitude: '51.500607',
   longitude: '-0.173593'
   )
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Don\'t worry, be happy',
   latitude: '51.497374',
   longitude: '-0.170288'
   )
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys, puppys!!!',
   latitude: '51.497463',
   longitude: '-0.018711'
@@ -104,18 +110,21 @@ u.save
 
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Don\'t think of kittens!.',
   latitude: '51.506913',
   longitude: '-0.183334'
   )
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Be Happy :D',
   latitude: '51.516101',
   longitude: '-0.098877'
   )
 c = CheerUp.create(
   user_id: u.id,
+  rating: 0,
   content: 'Jesus Loves you. (That\'s his job)',
   latitude: '51.515673',
   longitude: '-0.131493'
