@@ -8,13 +8,17 @@ class ApplicationController < ActionController::Base
 
   before_filter :store_location
 
-def after_sign_up_path_for(resource)
-  home_path
-end
+  def after_sign_up_path_for(resource)
+    home_path
+  end
 
-def after_sign_in_path_for(resource)
-  home_path
-end
+  def after_sign_in_path_for(resource)
+    home_path
+  end
+
+  def after_update_path_for(resource)
+    home_path
+  end
 
 def store_location
  # store last url - this is needed for post-login redirect to whatever the user last visited.
