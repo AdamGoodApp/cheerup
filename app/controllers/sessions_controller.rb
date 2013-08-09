@@ -13,8 +13,6 @@ class SessionsController < Devise::RegistrationsController
   end
 
 
-
-
     # DELETE /resource/sign_out
   def destroy
     redirect_path = after_sign_out_path_for(resource_name)

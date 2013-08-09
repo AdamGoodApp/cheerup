@@ -15,14 +15,9 @@
         <ul class="nav">
           <li class="divider-vertical"></li>
           <li><%= link_to('Home', home_path) %></li>
-<!--           <li class="divider-vertical"></li>
-          <li><%= link_to('CheerUps', cheer_ups_path)%></li>
- -->
+
          </ul>
-        <!--search bar in nav-->
-        <form class="navbar-search pull-left">
-          <input type="text" class="search-query" placeholder="Search">
-        </form>
+
 
         <div class="pull-right">
           <% if current_user %>
@@ -41,7 +36,7 @@
         </div><!--pull-right-->
       </div><!--navbar-->
     </div>
-    
+
 
     <%= yield %>
 
