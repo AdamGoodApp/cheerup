@@ -42,6 +42,24 @@ class User < ActiveRecord::Base
     r = self.cheer_ups.map { |c| c.rating.to_i }.sum
     if r == 0
       "Just Starting Out"
+    elsif r == [11..25]
+      "Getting the HEAT ON!!"
+    elsif r == [26..50]
+      "Grand Master"
+     elsif r == [51..100]
+      "A Legend is here"
+     elsif r > 101
+      "God"
+     elsif r == [-1..-10]
+      "On the wrong path"
+    elsif r == [-11..-30]
+      "Dude you suck"
+    elsif r == [-31..-50]
+      "I am Rebecca Black"
+    elsif r == [-51..-100]
+      "Seriously a Buzz Killington"
+    elsif r < -101
+      "Wating to be Banned"
     else r == [1..10]
       "Learning The Ropes"
     end
