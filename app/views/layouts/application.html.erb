@@ -15,14 +15,12 @@
         <ul class="nav">
           <li class="divider-vertical"></li>
           <li><%= link_to('Home', home_path) %></li>
-<!--           <li class="divider-vertical"></li>
-          <li><%= link_to('CheerUps', cheer_ups_path)%></li>
- -->
+          <li><%= link_to 'Trending', trending_path %></li>
          </ul>
-        <!--search bar in nav-->
-        
-
         <div class="pull-right">
+          <ul class="nav">
+            <li class='narrow_only'><%= link_to('Add new', new_cheer_up_path)%></li>
+          </ul>
           <% if current_user %>
             <%= image_tag current_user.image_upload.thumb.url %>
             <%= link_to "log out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
@@ -39,7 +37,7 @@
         </div><!--pull-right-->
       </div><!--navbar-->
     </div>
-    
+
 
     <%= yield %>
 

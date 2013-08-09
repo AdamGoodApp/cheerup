@@ -6,7 +6,7 @@ body {
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-size: 100% 100%;
-      min-height: 700px;
+      min-height: 1200px;
       /* Safari 4-5, Chrome 1-9 */
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,235,180)), to( rgb(60, 75, 105)));
 
@@ -253,8 +253,6 @@ margin: auto;
   width: 60%;
   height: 50%;
   text-align: left;
-  position: relative;
-  top: -70px;
 }
 .launch_one_left h1{
   font-size: 50px;
@@ -327,6 +325,10 @@ overflow: auto;
 
 @media only screen and (min-width : 568px) {
   .navbar-inner .pull-right img {
+    display: none;
+  }
+
+  .narrow_only {
     display: none;
   }
 }
