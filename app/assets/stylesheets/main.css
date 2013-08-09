@@ -329,6 +329,10 @@ overflow: auto;
   .navbar-inner .pull-right img {
     display: none;
   }
+
+  .narrow_only {
+    display: none;
+  }
 }
 
 @media only screen and (max-width : 568px) {
