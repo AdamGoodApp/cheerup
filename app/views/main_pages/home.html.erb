@@ -22,7 +22,7 @@
         <%= devise_error_messages! %>
 
         <div class="field"><%= f.label :email %>
-          <%= f.email_field :email, :autofocus => true %></div>
+          <%= f.email_field :email, :autofocus => true, :placeholder => "Email", required: "required" %></div>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -30,15 +30,15 @@
 
           <div class="field">
             <%= f.label :firstname %>
-            <%= f.text_field :firstname %>
+            <%= f.text_field :firstname, :placeholder => "Firstname", required: "required" %>
           </div>
           <div class="field">
             <%= f.label :lastname %>
-            <%= f.text_field :lastname %>
+            <%= f.text_field :lastname, :placeholder => "Lastname", required: "required" %>
           </div>
           <div class="field">
             <%= f.label :image_upload %>
-            <%= f.file_field :image_upload %>
+            <%= f.file_field :image_upload, required: "required" %>
           </div>
           <div class="field">
             Remove Image
@@ -46,7 +46,7 @@
           </div>
           <div class="field">
             <%= f.label :bio %>
-            <%= f.text_area :bio %>
+            <%= f.text_area :bio, :placeholder => "BIO", required: "required" %>
           </div>
 
 
@@ -57,7 +57,7 @@
               <%= f.password_field :password_confirmation %></div>
 
               <div class="field"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-                <%= f.password_field :current_password %></div>
+                <%= f.password_field :current_password, :placeholder => "Current Password", required: "required" %></div>
 
                 <div><%= f.submit "Update" %></div>
                 <% end %>
